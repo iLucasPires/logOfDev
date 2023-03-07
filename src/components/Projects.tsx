@@ -8,7 +8,7 @@ export default async function Projects() {
   const projects = await data.json();
 
   return (
-    <div className="flex flex-col  w-full gap-5">
+    <div className="flex flex-col w-full gap-5">
       <div className="flex items-end justify-between">
         <h3 className="text-2xl font-bold">Projects</h3>
         <Link
@@ -19,7 +19,7 @@ export default async function Projects() {
         </Link>
       </div>
       {(projects.length > 0 && (
-        <ul className="grid grid-cols-1 md:grid-cols-3 w-full justify-items-center gap-5">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {projects
             .slice(0, 3)
             .filter((project: any) => !project.fork)

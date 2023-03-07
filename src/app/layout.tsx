@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="flex flex-row gap-10 justify-center p-10 md:pt-36 bg-neutral-900 text-neutral-100 h-screen w-full">
+      <body className="p-10 md:pt-36 bg-neutral-900 text-neutral-100">
         <div className="flex flex-col md:flex-row align-top max-w-6xl mx-auto gap-5">
           <SideBar />
           {children}

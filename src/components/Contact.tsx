@@ -5,34 +5,38 @@ const socials = [
   {
     name: "Github",
     link: "https://github.com/iLucasPires",
-    icon: <IoLogoGithub />,
+    icon: <IoLogoGithub aria-label="Github" />,
   },
   {
     name: "Linkedin",
     link: "https://linkedin.com/in/iLucasPires",
-    icon: <IoLogoLinkedin />,
+    icon: <IoLogoLinkedin aria-label="Linkedin" />,
   },
   {
     name: "Twitter",
     link: "https://twitter.com/iLucasPires",
-    icon: <IoLogoTwitter />,
+    icon: <IoLogoTwitter aria-label="Twitter" />,
   },
 ];
 
 export default function Contact() {
   return (
-    <div className="flex flex-col gap-5">
-      <h3 className="text-2xl font-bold">Contact</h3>
-      <p className="text-neutral-400">
-        If you want to contact me, you can find me on the following social
-        networks:
-      </p>
-      <ul className="flex gap-5">
+    <div>
+      <div>
+        <h3 className="text-2xl font-bold">Contact</h3>
+        <p className="text-neutral-400">
+          If you want to contact me, you can find me on the following social
+          networks:
+        </p>
+      </div>
+      <ul className="mt-5">
         {socials.map((social) => (
-          <li key={social.name}>
+          <li key={social.name} className="mt-2">
             <Link
               href={social.link}
-              className="flex items-center gap-2 text-neutral-400 hover:text-neutral-200"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-200"
             >
               {social.icon}
               {social.name}

@@ -11,6 +11,10 @@ const navItems = [
     href: "/",
   },
   {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
     title: "About",
     href: "/about",
   },
@@ -20,19 +24,17 @@ export default function SideBar() {
   let pathname = usePathname() || "/";
 
   return (
-    <aside className="h-full flex items-center flex-col">
+    <aside className="flex justify-between md:justify-start items-center md:flex-col">
       <Image src="/logo.svg" alt="Logo" width={100} height={100} />
       <nav>
-        <ul className="gap-2 flex flex-col items-center h-full">
+        <ul className="gap-2 flex md:flex-col">
           {navItems.map((item) => {
-            const isActive = item.href === pathname;
-
             return (
               <li
                 key={item.title}
                 className={clsx(
-                  "text-neutral-400 hover:text-neutral-200",
-                  isActive && "bg-neutral-800 rounded-md p-2"
+                  "text-neutral-400 hover:text-neutral-200 px-2 py-1",
+                  item.href === pathname && "bg-neutral-800 rounded-md"
                 )}
               >
                 <Link href={item.href}>{item.title}</Link>
