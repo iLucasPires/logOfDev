@@ -35,6 +35,7 @@ export default function Contact() {
             <Link
               href={social.link}
               target="_blank"
+              aria-label={"Go to my " + social.name + " profile"}
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-200"
             >
@@ -47,3 +48,4 @@ export default function Contact() {
     </div>
   );
 }
+//

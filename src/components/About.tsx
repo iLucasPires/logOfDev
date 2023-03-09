@@ -7,7 +7,7 @@ export default function About() {
     <div>
       <div className="mb-2">
         <h1 className="text-4xl font-bold">Lucas Pires</h1>
-        <p className="text-neutral-400 italic">web developer</p>
+        <p className="text-neutral-400 italic">Web developer</p>
       </div>
       <div>
         <ReactTypingEffect
@@ -29,7 +29,7 @@ export default function About() {
         C, e também estou estudando JavaScript, TypeScript, React, Next.js, Mas
         também tenho conhecimento em HTML, CSS, PHP, MySQL, Python, Django,
         Node.js, Express.js, MongoDB, GraphQL, Docker, Linux, Git, GitHub,
-        Heroku, Vercel, Netlify, AWS, GCP, Firebase, entre outros.
+        Vercel, Firebase, entre outros.
       </p>
     </div>
   );

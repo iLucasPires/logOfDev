@@ -25,7 +25,13 @@ export default function SideBar() {
 
   return (
     <aside className="flex justify-between md:justify-start items-center md:flex-col">
-      <Image src="/logo.svg" alt="Logo" width={100} height={100} />
+      <Image
+        className="mb-3"
+        src="/logo.svg"
+        alt="Logo"
+        width={50}
+        height={50}
+      />
       <nav>
         <ul className="gap-2 flex md:flex-col">
           {navItems.map((item) => {
@@ -37,7 +43,12 @@ export default function SideBar() {
                   item.href === pathname && "bg-neutral-800 rounded-md"
                 )}
               >
-                <Link href={item.href}>{item.title}</Link>
+                <Link
+                  href={item.href}
+                  aria-label={"Go to " + item.title + " page"}
+                >
+                  {item.title}
+                </Link>
               </li>
             );
           })}
