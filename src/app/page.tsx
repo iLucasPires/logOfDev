@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <main className="flex  flex-col h-full w-full gap-10">
         <About />
-        {/** @ts-expect-error */}
         <Projects />
         <Contact />
       </main>
