@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
-import CardProjectProps from "../../types/cardProject";
+import CardProjectProps from "../types/cardProject";
 
 function Topics(props: CardProjectProps) {
   return (

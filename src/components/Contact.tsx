@@ -14,7 +14,7 @@ const socials = [
   },
   {
     name: "Twitter",
-    link: "https://twitter.com/iLucasPires",
+    link: "ht tps://twitter.com/iLucasPires",
     icon: <IoLogoTwitter aria-label="Twitter" />,
   },
 ];

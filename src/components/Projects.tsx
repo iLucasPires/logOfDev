@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CardProject from "./CardProjetc";
-import ProjectProps from "../../types/cardProject";
+import ProjectProps from "../types/cardProject";
 
 const MAX_PROJECTS_TO_SHOW = 3;
 
@@ -36,7 +36,7 @@ export default async function Projects() {
   const response = await fetch(
     "https://api.github.com/users/ilucaspires/repos?sort=created&direction=desc",
     {
-      next: { revalidate: 60 * 60 * 24 },
+      next: { revalidate: 3600 },
       cache: "force-cache",
     }
   );
