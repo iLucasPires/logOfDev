@@ -1,5 +1,6 @@
-import SideBar from "../components/SideBar";
 import "./globals.css";
+
+import SideBar from "../components/SideBar";
 
 export const metadata = {
   title: "portfolio",
@@ -9,11 +10,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: any) {
   return (
     <html lang="pt-BR">
       <body className="p-10 md:pt-36 bg-neutral-900 text-neutral-100">

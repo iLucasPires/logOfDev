@@ -1,27 +1,26 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
-import CardProjectProps from "../types/cardProject";
 
-function Topics(props: CardProjectProps) {
+function Topics(props: ProjectProps) {
   return (
     <ul className="flex flex-row gap-2 flex-wrap">
       <li className="text-neutral-400 bg-neutral-700 px-2 rounded-md">
         {props.language || "Other"}
       </li>
-      {props.topics?.map((topic: string) => (
+      {props.topics?.slice(0, 3).map((topic) => (
         <li
           key={topic}
           className="text-neutral-400 bg-neutral-700 px-2 rounded-md"
         >
-          {topic || "Other"}
+          {topic}
         </li>
       ))}
     </ul>
   );
 }
 
-function TitleCardProject(props: CardProjectProps) {
+function TitleCardProject(props: ProjectProps) {
   return (
     <div className="flex items-center justify-between flex-wrap">
       <h4 className="text-xl font-bold overflow-hidden overflow-ellipsis">
@@ -40,7 +39,7 @@ function TitleCardProject(props: CardProjectProps) {
   );
 }
 
-function DescriptionCardProject(props: CardProjectProps) {
+function DescriptionCardProject(props: ProjectProps) {
   return (
     <p className="line-clamp-2 my-3">
       {props.description || "No description 😢, but you can check the code!"}
@@ -48,7 +47,7 @@ function DescriptionCardProject(props: CardProjectProps) {
   );
 }
 
-export default function CardProject(props: CardProjectProps) {
+export default function CardProject(props: ProjectProps) {
   return (
     <li className="border-neutral-700 border-2 rounded-md hover:border-neutral-500">
       <Link

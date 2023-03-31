@@ -1,23 +1,11 @@
 "use client";
-import {
-  IoHomeSharp,
-  IoNewspaperSharp,
-  IoPersonSharp,
-} from "react-icons/io5";
 
-interface ItemMenuProps {
-  item: {
-    title: string;
-    href: string;
-    icon: JSX.Element;
-  };
-  isPathName: boolean;
-}
-
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { IoHomeSharp, IoNewspaperSharp } from "react-icons/io5";
 import clsx from "clsx";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 
 const navItems = [
   {
@@ -30,11 +18,6 @@ const navItems = [
     href: "/blog",
     icon: <IoNewspaperSharp aria-label="Blog" />,
   },
-  {
-    title: "About",
-    href: "/about",
-    icon: <IoPersonSharp aria-label="About" />,
-  },
 ];
 
 function ItemMenu(props: ItemMenuProps) {
@@ -45,13 +28,13 @@ function ItemMenu(props: ItemMenuProps) {
         props.isPathName && "bg-neutral-800 rounded-md"
       )}
     >
-      {props.item.icon}
-
       <Link
         href={props.item.href}
+        className="inline-flex items-center gap-2"
         aria-label={"Go to " + props.item.title + " page"}
       >
-        {props.item.title}
+        {props.item.icon}
+        <span>{props.item.title}</span>
       </Link>
     </li>
   );
@@ -59,6 +42,8 @@ function ItemMenu(props: ItemMenuProps) {
 
 export default function SideBar() {
   let pathname = usePathname() || "/";
+  console.log(pathname.includes("/"));
+
 
   return (
     <aside className="flex justify-between md:justify-start items-center md:flex-col">
@@ -75,7 +60,7 @@ export default function SideBar() {
             <ItemMenu
               key={item.title}
               item={item}
-              isPathName={item.href === pathname}
+              isPathName={pathname.indexOf(item.href) !== -1}
             />
           ))}
         </ul>

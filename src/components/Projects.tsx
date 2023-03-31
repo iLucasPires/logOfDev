@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CardProject from "./CardProjetc";
-import ProjectProps from "../types/cardProject";
 
 const MAX_PROJECTS_TO_SHOW = 3;
 
@@ -23,13 +22,12 @@ function ListProjects(props: any) {
           ))}
       </ul>
     );
-  } else {
-    return (
-      <div className="flex flex-col items-center justify-center">
-        <p className="text-neutral-400">No projects 😢</p>
-      </div>
-    );
   }
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <p className="text-neutral-400">No projects 😢</p>
+    </div>
+  );
 }
 
 export default async function Projects() {
