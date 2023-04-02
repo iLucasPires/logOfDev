@@ -1,6 +1,6 @@
 "use client";
 
-import { IoHomeSharp, IoNewspaperSharp } from "react-icons/io5";
+import { IoHomeSharp, IoNewspaperSharp, IoMail } from "react-icons/io5";
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,6 +18,11 @@ const navItems = [
     href: "/blog",
     icon: <IoNewspaperSharp aria-label="Blog" />,
   },
+  {
+    title: "Contact",
+    href: "/contact",
+    icon: <IoMail aria-label="Contact" />,
+  }
 ];
 
 function ItemMenu(props: ItemMenuProps) {
@@ -41,8 +46,10 @@ function ItemMenu(props: ItemMenuProps) {
 }
 
 export default function SideBar() {
-  let pathname = usePathname() || "/";
-  console.log(pathname.includes("/"));
+  let pathname = usePathname() || '/';
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog';
+  }
 
 
   return (
@@ -60,7 +67,7 @@ export default function SideBar() {
             <ItemMenu
               key={item.title}
               item={item}
-              isPathName={pathname.indexOf(item.href) !== -1}
+              isPathName={pathname === item.href}
             />
           ))}
         </ul>

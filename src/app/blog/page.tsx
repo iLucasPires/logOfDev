@@ -1,7 +1,7 @@
 import { getPostsData } from "@/lib/getPosts";
 import CardBlog from "@/src/components/CardBlog";
 
-export default function Blog() {
+export default function BlogPage() {
   const posts = getPostsData();
 
   return (
