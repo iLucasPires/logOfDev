@@ -1,4 +1,4 @@
-import { getPostData, getPostsData } from "@/src/pages/util/getPosts";
+import { getPostData, getPostsData } from "@/util/getPosts";
 import Link from "next/link";
 
 export function generateStaticParams() {
