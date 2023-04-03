@@ -1,24 +1,17 @@
 import Link from "next/link";
 import CardProject from "./CardProjetc";
+import clsx from "clsx";
 
 const MAX_PROJECTS_TO_SHOW = 3;
 
 function ListProjects(props: any) {
   if (props.projects.length > 0) {
     return (
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <ul className={clsx("grid grid-cols-1 gap-5", "md:grid-cols-3")}>
         {props.projects
           .slice(0, MAX_PROJECTS_TO_SHOW)
           .map((project: ProjectProps) => (
-            <CardProject
-              key={project.id}
-              name={project.name}
-              description={project.description}
-              language={project.language}
-              topics={project.topics}
-              html_url={project.html_url}
-              stargazers_count={project.stargazers_count}
-            />
+            <CardProject key={project.id} {...project} />
           ))}
       </ul>
     );
@@ -41,13 +34,16 @@ export default async function Projects() {
   const projects = await response.json();
 
   return (
-    <div className="flex flex-col w-full gap-5">
+    <div className="flex w-full flex-col gap-5">
       <div className="flex items-end justify-between">
         <h3 className="text-2xl font-bold">Projects</h3>
         <Link
           aria-label="Go to my Github profile"
           href="https://github.com/iLucasPires?tab=repositories"
-          className="text-neutral-400 hover:text-neutral-200 underline"
+          className={clsx(
+            "text-neutral-400 underline",
+            "hover:text-neutral-200"
+          )}
         >
           See all
         </Link>

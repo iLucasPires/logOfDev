@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import Contact from "../components/Contact";
+import FollowMe from "../components/FollowMe";
 import About from "../components/About";
 import Projects from "../components/Projects";
 
@@ -11,7 +11,7 @@ export default function HomePage() {
         <About />
         {/** @ts-expect-error */}
         <Projects />
-        <Contact />
+        <FollowMe />
       </main>
     </Fragment>
   );

@@ -1,4 +1,4 @@
-import { getPostsData } from "@/lib/getPosts";
+import { getPostsData } from "@/src/pages/util/getPosts";
 import CardBlog from "@/src/components/CardBlog";
 
 export default function BlogPage() {
