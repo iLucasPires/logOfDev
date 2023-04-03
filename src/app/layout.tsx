@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }: any) {
   return (
     <html lang="pt-BR">
-      <body className="p-10 md:pt-36 bg-neutral-900 text-neutral-100">
+      <body className="p-10 md:pt-36 bg-[#111010] text-neutral-100">
         <div className="flex flex-col md:flex-row align-top max-w-6xl mx-auto gap-5">
           <SideBar />
           {children}

@@ -4,14 +4,14 @@ import { AiFillStar } from "react-icons/ai";
 
 function Topics(props: ProjectProps) {
   return (
-    <ul className="flex flex-row gap-2 flex-wrap">
-      <li className="text-neutral-400 bg-neutral-700 px-2 rounded-md">
+    <ul className="flex flex-row flex-wrap gap-2">
+      <li className="rounded-md bg-neutral-700 px-2 text-neutral-400">
         {props.language || "Other"}
       </li>
       {props.topics?.slice(0, 3).map((topic) => (
         <li
           key={topic}
-          className="text-neutral-400 bg-neutral-700 px-2 rounded-md"
+          className="rounded-md bg-neutral-700 px-2 text-neutral-400"
         >
           {topic}
         </li>
@@ -22,8 +22,13 @@ function Topics(props: ProjectProps) {
 
 function TitleCardProject(props: ProjectProps) {
   return (
-    <div className="flex items-center justify-between flex-wrap">
-      <h4 className="text-xl font-bold overflow-hidden overflow-ellipsis">
+    <div className="flex flex-wrap items-center justify-between">
+      <h4
+        className={clsx(
+          "text-xl font-bold",
+          "overflow-hidden overflow-ellipsis "
+        )}
+      >
         {props.name}
       </h4>
       <div
@@ -41,7 +46,7 @@ function TitleCardProject(props: ProjectProps) {
 
 function DescriptionCardProject(props: ProjectProps) {
   return (
-    <p className="line-clamp-2 my-3">
+    <p className="my-3 line-clamp-2">
       {props.description || "No description 😢, but you can check the code!"}
     </p>
   );
@@ -49,12 +54,17 @@ function DescriptionCardProject(props: ProjectProps) {
 
 export default function CardProject(props: ProjectProps) {
   return (
-    <li className="border-neutral-700 border-2 rounded-md hover:border-neutral-500">
+    <li
+      className={clsx(
+        "rounded-md border-2 border-neutral-700",
+        "hover:border-neutral-500"
+      )}
+    >
       <Link
         href={props.html_url || "#"}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-col justify-between h-full p-5"
+        className="flex h-full flex-col justify-between p-5"
         aria-label={"Go to " + props.name + " repository on Github"}
       >
         <TitleCardProject

@@ -9,7 +9,7 @@ interface ItemMenuProps {
   item: {
     title: string;
     href: string;
-    icon: JSX.Element;
+    icon: IconType;
   };
   isPathName: boolean;
 }
