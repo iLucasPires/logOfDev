@@ -1,39 +1,34 @@
 import Link from "next/link";
-import { IconType } from "react-icons";
-import { IoLogoGithub, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const socials = [
   {
     name: "Github",
-    link: "https://github.com/iLucasPires",
-    icon: IoLogoGithub,
+    url: "https://github.com/iLucasPires",
+    LogoSocial: IoLogoGithub,
   },
   {
     name: "Linkedin",
-    link: "https://linkedin.com/in/iLucasPires",
-    icon: IoLogoLinkedin,
-  },
-  {
-    name: "Twitter",
-    link: "ht tps://twitter.com/iLucasPires",
-    icon: IoLogoTwitter,
+    url: "https://linkedin.com/in/iLucasPires",
+    LogoSocial: IoLogoLinkedin,
   },
 ];
 
-function LinkContatc(props: {
-  social: { name: string; link: string; icon: IconType };
-}) {
+function LinkContatc(props: SocialMediaProps) {
+  const { name, url, LogoSocial } = props;
+  const ariaLabel = "Go to my " + name + " profile";
+
   return (
-    <li key={props.social.name} className="mt-2">
+    <li className="mt-2">
       <Link
-        href={props.social.link}
+        href={url}
+        aria-label={ariaLabel}
         target="_blank"
-        aria-label={"Go to my " + props.social.name + " profile"}
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-200"
       >
-        <props.social.icon />
-        <span>{props.social.name}</span>
+        <LogoSocial />
+        <span>{name}</span>
       </Link>
     </li>
   );
@@ -41,7 +36,7 @@ function LinkContatc(props: {
 
 export default function FollowMe() {
   return (
-    <div>
+    <div className="mb-14">
       <div>
         <h3 className="text-2xl font-bold">Follow me</h3>
         <div className="inline-flex gap-1  items-center">
@@ -50,6 +45,7 @@ export default function FollowMe() {
           </p>
           <Link
             className="text-neutral-400 underline hover:text-neutral-200"
+            aria-label="go to contact page"
             href="contact"
           >
             here
@@ -57,8 +53,8 @@ export default function FollowMe() {
         </div>
       </div>
       <ul className="mt-5">
-        {socials.map((social) => (
-          <LinkContatc social={social} />
+        {socials.map((social: SocialMediaProps) => (
+          <LinkContatc key={social.name} {...social} />
         ))}
       </ul>
     </div>

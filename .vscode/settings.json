@@ -13,7 +13,6 @@
     ".git": true,
     ".next": true,
     "postcss.config.js": true,
-    "next.config.js": true,
 
     "tsconfig.build.json": true,
     "tslint.json": true,

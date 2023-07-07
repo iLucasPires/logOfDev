@@ -17,16 +17,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <h1 className="text-4xl font-bold">{title}</h1>
         <p className="text-sm">{date}</p>
       </div>
-
       <article
         className="prose !prose-invert"
         dangerouslySetInnerHTML={{ __html: contentHtml || "" }}
       />
-
       <Link href="/blog" className="underline text-neutral-300 text-left">
         Back to blog
       </Link>
-
     </main>
   );
 }

@@ -1,25 +1,31 @@
-interface Post {
+interface iPost {
   id: string;
   title: string;
   date: string;
-  contentHtml ?: string;
+  contentHtml?: string;
 }
 
 interface ItemMenuProps {
   item: {
     title: string;
     href: string;
-    icon: IconType;
+    LogoNav: IconType;
   };
   isPathName: boolean;
 }
 
 interface ProjectProps {
-  id ?: number;
+  id?: number;
   name?: string;
   description?: string;
   language?: string;
   topics?: Array<string>;
   html_url?: string;
   stargazers_count?: number;
+}
+
+interface SocialMediaProps {
+  name: string;
+  LogoSocial: IconType;
+  url: string;
 }
