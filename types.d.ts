@@ -5,7 +5,7 @@ interface iPost {
   contentHtml?: string;
 }
 
-interface ItemMenuProps {
+interface iItemMenuProps {
   item: {
     title: string;
     href: string;
@@ -14,7 +14,7 @@ interface ItemMenuProps {
   isPathName: boolean;
 }
 
-interface ProjectProps {
+interface iProjectProps {
   id?: number;
   name?: string;
   description?: string;
@@ -24,7 +24,7 @@ interface ProjectProps {
   stargazers_count?: number;
 }
 
-interface SocialMediaProps {
+interface iSocialMediaProps {
   name: string;
   LogoSocial: IconType;
   url: string;

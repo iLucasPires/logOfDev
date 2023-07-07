@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 
-function Topics(props: ProjectProps) {
+function Topics(props: iProjectProps) {
   const { topics, language } = props;
   const slicedTopics = topics?.slice(0, 3) || [];
   const hasTopics = slicedTopics.length > 0;
@@ -39,7 +39,7 @@ function Topics(props: ProjectProps) {
   );
 }
 
-function TitleCardProject(props: ProjectProps) {
+function TitleCardProject(props: iProjectProps) {
   const { name, stargazers_count } = props;
   const colorText = stargazers_count ? "text-yellow-400" : "text-neutral-400";
   const stars = stargazers_count || 0;
@@ -57,7 +57,7 @@ function TitleCardProject(props: ProjectProps) {
   );
 }
 
-function DescriptionCardProject(props: ProjectProps) {
+function DescriptionCardProject(props: iProjectProps) {
   const { description } = props;
   const defaultDescription = "No description 😢, but you can check the code!";
   const truncatedDescription = description || defaultDescription;
@@ -67,7 +67,7 @@ function DescriptionCardProject(props: ProjectProps) {
   );
 }
 
-export default function CardProject(props: ProjectProps) {
+export default function CardProject(props: iProjectProps) {
   const { name, html_url, stargazers_count, description, topics, language } =
     props;
   const ariaLabel = `Go to ${name} repository on Github`;

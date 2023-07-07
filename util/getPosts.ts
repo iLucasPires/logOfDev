@@ -22,7 +22,7 @@ function getPath(post: string): string {
   return path.join(POST_DIR, post);
 }
 
-function handlePostData(postData: string): Post {
+function handlePostData(postData: string): iPost {
   const matterResult = matter(readFileSync(getPath(postData), DECODE));
   return {
     id: postData.replace(MD_REGEX, ""),
@@ -44,7 +44,7 @@ export function getPostsData() {
 export async function getPostData(id: string) {
   const matterResult = matter(readFileSync(`${POST_DIR}/${id}.md`, DECODE));
   const contentHtml = await remark().use(html).process(matterResult.content);
-  const blogPostWithHtml: Post = {
+  const blogPostWithHtml: iPost = {
     id,
     title: matterResult.data.title,
     date: formatDate(matterResult.data.date),

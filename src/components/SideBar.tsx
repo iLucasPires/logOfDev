@@ -23,7 +23,7 @@ const navItems = [
   },
 ];
 
-function ItemMenu(props: ItemMenuProps) {
+function ItemMenu(props: iItemMenuProps) {
   const {
     item: { title, href, LogoNav },
     isPathName,

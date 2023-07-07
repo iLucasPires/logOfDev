@@ -14,7 +14,7 @@ const socials = [
   },
 ];
 
-function LinkContatc(props: SocialMediaProps) {
+function LinkContatc(props: iSocialMediaProps) {
   const { name, url, LogoSocial } = props;
   const ariaLabel = "Go to my " + name + " profile";
 
@@ -53,7 +53,7 @@ export default function FollowMe() {
         </div>
       </div>
       <ul className="mt-5">
-        {socials.map((social: SocialMediaProps) => (
+        {socials.map((social: iSocialMediaProps) => (
           <LinkContatc key={social.name} {...social} />
         ))}
       </ul>
