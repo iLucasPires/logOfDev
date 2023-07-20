@@ -1,12 +1,22 @@
 import "./globals.css";
-
+import { Metadata } from "next";
 import SideBar from "../components/SideBar";
 
-export const metadata = {
-  title: "portfolio",
-  description: "My personal portfolio",
-  icons: {
-    shortcut: "/logo.svg",
+export const metadata: Metadata = {
+  title: "Log of dev",
+  generator: "Log of dev",
+  applicationName: "Log of dev",
+  keywords: ["js", "typescript", "react", "nextjs", "tailwindcss", "42", "42sp"],
+  authors: [{name:"lucasp"}],
+  creator: 'Lucas Pires',
+  publisher: 'Lucas Pires',
+  metadataBase: new URL("https://logofdev.software/"),
+  alternates: {
+      canonical: '/',
+      languages: {
+          'en-US': '/en-US',
+          'pt-BR': '/pt-BR',
+      },
   },
 };
 

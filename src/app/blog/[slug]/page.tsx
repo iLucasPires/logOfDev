@@ -16,7 +16,7 @@ export function generateStaticParams() {
 function WithoutPosts() {
   return (
     <div className="flex flex-col h-full w-full">
-      <h2 className="text-xl font-bold">No sadasdasdsadsa found</h2>
+      <h2 className="text-xl font-bold">No posts yet</h2>
       <p className=" text-neutral-400">
         I'm sorry, I don't have any posts yet. Please come back later.
       </p>
