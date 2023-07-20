@@ -35,17 +35,17 @@ function handlePostData(postData: string): iPost {
 }
 
 export function getPostsData() {
-  const allPostsData = readdirSync(POST_DIR).map((file) =>
-    handlePostData(file)
-  );
+  try {
+    const allPostsData = readdirSync(POST_DIR).map((file) =>
+      handlePostData(file)
+    );
 
-  if (!allPostsData) {
+    return allPostsData.sort((firstPost, secondPost) =>
+      firstPost.date < secondPost.date ? 1 : -1
+    );
+  } catch (error) {
     throw new Error("No posts data");
   }
-
-  return allPostsData.sort((firstPost, secondPost) =>
-    firstPost.date < secondPost.date ? 1 : -1
-  );
 }
 
 export async function getPostData(id: string) {
