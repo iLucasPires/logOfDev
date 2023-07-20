@@ -24,6 +24,9 @@ function getPath(post: string): string {
 
 function handlePostData(postData: string): iPost {
   const matterResult = matter(readFileSync(getPath(postData), DECODE));
+  if (!matterResult) {
+    throw new Error("No matter result");
+  }
   return {
     id: postData.replace(MD_REGEX, ""),
     title: matterResult.data.title,
@@ -46,18 +49,17 @@ export function getPostsData() {
 }
 
 export async function getPostData(id: string) {
-  const matterResult = matter(readFileSync(`${POST_DIR}/${id}.md`, DECODE));
-  const contentHtml = await remark().use(html).process(matterResult.content);
-  const blogPostWithHtml: iPost = {
-    id,
-    title: matterResult.data.title,
-    date: formatDate(matterResult.data.date),
-    contentHtml: contentHtml.toString(),
-  };
-
-  if (!blogPostWithHtml) {
+  try {
+    const matterResult = matter(readFileSync(`${POST_DIR}/${id}.md`, DECODE));
+    const contentHtml = await remark().use(html).process(matterResult.content);
+    const blogPostWithHtml: iPost = {
+      id,
+      title: matterResult.data.title,
+      date: formatDate(matterResult.data.date),
+      contentHtml: contentHtml.toString(),
+    };
+    return blogPostWithHtml;
+  } catch (error) {
     throw new Error("No post data");
   }
-
-  return blogPostWithHtml;
 }
