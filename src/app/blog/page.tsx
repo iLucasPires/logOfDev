@@ -23,11 +23,16 @@ function WithPosts(posts: iPost[]) {
 }
 
 export default function BlogPage() {
-  const posts: iPost[] = getPostsData();
-  return (
-    <main className="flex flex-col h-full w-full gap-10">
-      <h1 className="text-4xl font-bold">Blog</h1>
-      {posts.length === 0 ? <WithoutPosts /> : <WithPosts {...posts} />}
-    </main>
-  );
+  try {
+    const posts = getPostsData();
+    return (
+      <main className="flex flex-col h-full w-full gap-10">
+        <h1 className="text-4xl font-bold">Blog</h1>
+        {posts.length === 0 ? <WithoutPosts /> : <WithPosts {...posts} />}
+      </main>
+    );
+  } catch (e) {
+    console.error(e);
+    return WithoutPosts();
+  }
 }
