@@ -2,15 +2,37 @@ import { getPostData, getPostsData } from "@/util/getPosts";
 import Link from "next/link";
 
 export function generateStaticParams() {
-  const posts = getPostsData();
-  return posts.map((post) => ({
-    slug: post.id,
-  }));
+  try {
+    const posts = getPostsData();
+    return posts.map((post) => ({
+      slug: post.id,
+    }));
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const { title, date, contentHtml } = await getPostData(slug);
+function WithoutPosts() {
+  return (
+    <div className="flex flex-col h-full w-full">
+      <h2 className="text-xl font-bold">No sadasdasdsadsa found</h2>
+      <p className=" text-neutral-400">
+        I'm sorry, I don't have any posts yet. Please come back later.
+      </p>
+    </div>
+  );
+}
+
+function WithPosts({
+  title,
+  date,
+  contentHtml,
+}: {
+  title: string;
+  date: string;
+  contentHtml: string | undefined;
+}) {
   return (
     <main className="flex flex-col h-full w-full">
       <div className="mb-10">
@@ -26,4 +48,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
       </Link>
     </main>
   );
+}
+
+export default async function Post({ params }: { params: { slug: string } }) {
+  try {
+    const { slug } = params;
+    const { title, date, contentHtml } = await getPostData(slug);
+    return WithPosts({ title, date, contentHtml });
+  } catch (e) {
+    console.error(e);
+    return WithoutPosts();
+  }
 }

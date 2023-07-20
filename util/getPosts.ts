@@ -36,6 +36,10 @@ export function getPostsData() {
     handlePostData(file)
   );
 
+  if (!allPostsData) {
+    throw new Error("No posts data");
+  }
+
   return allPostsData.sort((firstPost, secondPost) =>
     firstPost.date < secondPost.date ? 1 : -1
   );
@@ -50,6 +54,10 @@ export async function getPostData(id: string) {
     date: formatDate(matterResult.data.date),
     contentHtml: contentHtml.toString(),
   };
+
+  if (!blogPostWithHtml) {
+    throw new Error("No post data");
+  }
 
   return blogPostWithHtml;
 }
