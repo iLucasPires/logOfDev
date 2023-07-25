@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Metadata } from "next";
 import SideBar from "../components/SideBar";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Log of dev",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: any) {
       <body className="p-10 md:pt-36 bg-[#111010] text-neutral-100">
         <div className="flex flex-col md:flex-row align-top max-w-6xl mx-auto gap-5">
           <SideBar />
+          <Analytics />
           {children}
         </div>
       </body>
