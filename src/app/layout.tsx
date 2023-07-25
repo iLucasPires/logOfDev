@@ -5,19 +5,47 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Log of dev",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: "/apple-touch-icon.png",
+    },
+  ],
+  manifest: "/site.webmanifest",
   generator: "Log of dev",
   applicationName: "Log of dev",
-  keywords: ["js", "typescript", "react", "nextjs", "tailwindcss", "42", "42sp"],
-  authors: [{name:"lucasp"}],
-  creator: 'Lucas Pires',
-  publisher: 'Lucas Pires',
+  keywords: [
+    "js",
+    "typescript",
+    "react",
+    "nextjs",
+    "tailwindcss",
+    "42",
+    "42sp",
+  ],
+  authors: [{ name: "lucasp" }],
+  creator: "Lucas Pires",
+  publisher: "Lucas Pires",
   metadataBase: new URL("https://logofdev.software/"),
   alternates: {
-      canonical: '/',
-      languages: {
-          'en-US': '/en-US',
-          'pt-BR': '/pt-BR',
-      },
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+      "pt-BR": "/pt-BR",
+    },
   },
 };
 

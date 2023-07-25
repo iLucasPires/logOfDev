@@ -5,7 +5,7 @@ function WithoutPosts() {
   return (
     <div className="flex flex-col h-full w-full">
       <h2 className="text-xl font-bold">No posts found</h2>
-      <p className=" text-neutral-400">
+      <p className=" text-neutral-400 mt-5">
         I'm sorry, I don't have any posts yet. Please come back later.
       </p>
     </div>
