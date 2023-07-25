@@ -41,15 +41,14 @@ export default function FollowMe() {
         <h3 className="text-2xl font-bold">Follow me</h3>
         <div className="inline-block mt-2">
           <p className="text-neutral-400 inline">
-            you can find me on social media, or send me an email {" "}
+          If you want to know more about me,{" "}
+            <Link
+              className="text-neutral-400 underline hover:text-neutral-200 inline font-bold"
+              href="contact"
+            >
+              contact
+            </Link>
           </p>
-          <Link
-            className="text-neutral-400 underline hover:text-neutral-200 inline font-bold"
-            aria-label="go to contact page"
-            href="contact"
-          >
-            here
-          </Link>
         </div>
       </div>
       <ul className="mt-5">

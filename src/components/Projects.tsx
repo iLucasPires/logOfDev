@@ -35,7 +35,7 @@ export default async function Projects() {
   return (
     <div className="flex w-full flex-col gap-5">
       <div className="flex items-end justify-between">
-        <h3 className="text-2xl font-bold">Projects</h3>
+        <h2 className="text-2xl font-bold">Projects</h2>
         <Link
           className="text-neutral-400 underline hover:text-neutral-200"
           aria-label="Go to my Github profile"

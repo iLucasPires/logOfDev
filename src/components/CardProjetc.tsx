@@ -8,33 +8,32 @@ function Topics(props: iProjectProps) {
 
   return (
     <ul className="flex flex-col gap-2">
-      <div className="flex gap-1">
+      <li className="flex gap-1">
         <p className="text-neutral-400 ">Language:</p>
-        <li className="bg-neutral-800 rounded-md px-2 text-neutral-400 ">
+        <p className="bg-neutral-800 rounded-md px-2 text-neutral-400 ">
           {language}
-        </li>
-      </div>
+        </p>
+      </li>
 
-      <div className="flex gap-1 items-center">
+      <li className="flex gap-1 items-center">
         <p className="text-neutral-400 ">Topics:</p>
-
         <ul className="flex flex-wrap gap-1">
           {hasTopics ? (
             slicedTopics.map((topic) => (
               <li
                 key={topic}
-                className="bg-neutral-800 rounded-md px-2 text-neutral-400 "
+                className="bg-neutral-800 rounded-md px-2 text-neutral-400"
               >
                 {topic}
               </li>
             ))
           ) : (
-            <li className="bg-neutral-800 rounded-md px-2 text-neutral-400 ">
+            <li className="bg-neutral-800 rounded-md px-2 text-neutral-400">
               not found
             </li>
           )}
         </ul>
-      </div>
+      </li>
     </ul>
   );
 }
@@ -42,28 +41,17 @@ function Topics(props: iProjectProps) {
 function TitleCardProject(props: iProjectProps) {
   const { name, stargazers_count } = props;
   const colorText = stargazers_count ? "text-yellow-400" : "text-neutral-400";
-  const stars = stargazers_count || 0;
 
   return (
     <div className="flex flex-wrap items-center justify-between">
-      <h4 className="text-xl font-bold overflow-hidden overflow-ellipsis">
+      <h3 className="text-xl font-bold overflow-hidden overflow-ellipsis">
         {name}
-      </h4>
+      </h3>
       <div className={`flex items-center gap-1 ${colorText}`}>
         <AiFillStar aria-label="Stars" />
-        <span>{stars}</span>
+        <span>{stargazers_count || 0}</span>
       </div>
     </div>
-  );
-}
-
-function DescriptionCardProject(props: iProjectProps) {
-  const { description } = props;
-  const defaultDescription = "No description 😢, but you can check the code!";
-  const truncatedDescription = description || defaultDescription;
-
-  return (
-    <p className="my-3 line-clamp-2 text-neutral-400">{truncatedDescription}</p>
   );
 }
 
@@ -82,7 +70,9 @@ export default function CardProject(props: iProjectProps) {
         aria-label={ariaLabel}
       >
         <TitleCardProject name={name} stargazers_count={stargazers_count} />
-        <DescriptionCardProject description={description} />
+        <p className="my-3 line-clamp-2 text-neutral-400">
+          {description || "No description 😢, but you can check the code!"}
+        </p>
         <Topics topics={topics} language={language} />
       </Link>
     </li>

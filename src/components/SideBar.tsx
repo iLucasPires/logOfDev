@@ -24,15 +24,13 @@ const navItems = [
 ];
 
 function ItemMenu(props: iItemMenuProps) {
-  const {
-    item: { title, href, LogoNav },
-    isPathName,
-  } = props;
-  const ariaLabel = "Go to " + title + " page";
+  const { isPathName, item } = props;
+  const { title, href, LogoNav } = item;
   const effectHoverPathName = isPathName && "rounded-md bg-neutral-900";
 
   return (
     <li
+      role="menuitem"
       className={
         "flex items-center gap-2 px-2 py-1 text-neutral-400 hover:text-neutral-200 " +
         effectHoverPathName
@@ -40,7 +38,8 @@ function ItemMenu(props: iItemMenuProps) {
     >
       <Link
         href={href}
-        aria-label={ariaLabel}
+        aria-label={"Navigate to tab " + title + " page"}
+        aria-labelledby="menu-item-label"
         className="inline-flex items-center gap-2"
       >
         <LogoNav className="text-neutral-400" aria-label={title} />
@@ -62,13 +61,21 @@ export default function SideBar() {
 
       <nav>
         <ul className="flex gap-2 md:flex-col" role="menu">
-          {navItems.map((item) => (
-            <ItemMenu
-              key={item.title}
-              isPathName={item.href === pathname}
-              item={item}
-            />
-          ))}
+          <ItemMenu
+            key={navItems[0].title}
+            isPathName={pathname === navItems[0].href}
+            item={navItems[0]}
+          />
+          <ItemMenu
+            key={navItems[1].title}
+            isPathName={pathname === navItems[1].href}
+            item={navItems[1]}
+          />
+          <ItemMenu
+            key={navItems[2].title}
+            isPathName={pathname === navItems[2].href}
+            item={navItems[2]}
+          />
         </ul>
       </nav>
     </aside>
