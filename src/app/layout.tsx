@@ -4,7 +4,11 @@ import SideBar from "../components/SideBar";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Log of dev",
+  title: "Log of Dev",
+  description:
+    "Embark on a journey through my programming world. Explore my \
+    personal blog, portfolio, and project logs. Follow along with \
+    my experiences and growth in the fascinating world of development.",
   icons: [
     {
       rel: "icon",
@@ -25,18 +29,20 @@ export const metadata: Metadata = {
     },
   ],
   manifest: "/site.webmanifest",
-  generator: "Log of dev",
-  applicationName: "Log of dev",
+  generator: "Log of Dev",
+  applicationName: "Log of Dev",
   keywords: [
-    "js",
-    "typescript",
-    "react",
-    "nextjs",
-    "tailwindcss",
-    "42",
-    "42sp",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Lucas Pires Nogueira",
+    "developer",
+    "web developer",
+    "software developer",
   ],
-  authors: [{ name: "lucasp" }],
+  authors: [{ name: "Lucas P." }],
   creator: "Lucas Pires",
   publisher: "Lucas Pires",
   metadataBase: new URL("https://logofdev.software/"),
