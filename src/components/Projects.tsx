@@ -17,17 +17,17 @@ function ListProjects(props: { projects: iProjectProps[] }) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <p className="text-neutral-400">No projects 😢</p>
+      <p className="text-neutral-400">Sem projetos 😢</p>
     </div>
   );
 }
 
 export default async function Projects() {
-  const urlApi = "https://api.github.com/users/ilucaspires/repos";
-  const urlApiQuery = "?sort=created&direction=desc";
+  const urlApi =
+    "https://api.github.com/users/ilucaspires/repos?sort=created&direction=desc";
   const urlRepo = "https://github.com/iLucasPires?tab=repositories";
 
-  const response = await fetch(urlApi + urlApiQuery, {
+  const response = await fetch(urlApi, {
     next: { revalidate: 3600 },
   });
   const projects = await response.json();
@@ -35,13 +35,13 @@ export default async function Projects() {
   return (
     <div className="flex w-full flex-col gap-5">
       <div className="flex items-end justify-between">
-        <h2 className="text-2xl font-bold">Projects</h2>
+        <h2 className="text-2xl font-bold">Projetos</h2>
         <Link
           className="text-neutral-400 underline hover:text-neutral-200"
           aria-label="Go to my Github profile"
           href={urlRepo}
         >
-          See all
+          Ver mais
         </Link>
       </div>
       <ListProjects projects={projects} />

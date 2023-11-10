@@ -9,14 +9,14 @@ function Topics(props: iProjectProps) {
   return (
     <ul className="flex flex-col gap-2">
       <li className="flex gap-1">
-        <p className="text-neutral-400 ">Language:</p>
+        <p className="text-neutral-400 ">Linguagem:</p>
         <p className="bg-neutral-800 rounded-md px-2 text-neutral-400 ">
           {language}
         </p>
       </li>
 
       <li className="flex gap-1 items-center">
-        <p className="text-neutral-400 ">Topics:</p>
+        <p className="text-neutral-400 ">Topicos:</p>
         <ul className="flex flex-wrap gap-1">
           {hasTopics ? (
             slicedTopics.map((topic) => (
@@ -71,7 +71,7 @@ export default function CardProject(props: iProjectProps) {
       >
         <TitleCardProject name={name} stargazers_count={stargazers_count} />
         <p className="my-3 line-clamp-2 text-neutral-400">
-          {description || "No description 😢, but you can check the code!"}
+          {description || "Sem descrição 😢, mas você pode ver o codigo!"}
         </p>
         <Topics topics={topics} language={language} />
       </Link>

@@ -37,20 +37,7 @@ function LinkContatc(props: iSocialMediaProps) {
 export default function FollowMe() {
   return (
     <div className="mb-14">
-      <div>
-        <h3 className="text-2xl font-bold">Follow me</h3>
-        <div className="inline-block mt-2">
-          <p className="text-neutral-400 inline">
-          If you want to know more about me,{" "}
-            <Link
-              className="text-neutral-400 underline hover:text-neutral-200 inline font-bold"
-              href="contact"
-            >
-              contact
-            </Link>
-          </p>
-        </div>
-      </div>
+      <h3 className="text-2xl font-bold">Minhas redes sociais</h3>
       <ul className="mt-5">
         {socials.map((social: iSocialMediaProps) => (
           <LinkContatc key={social.name} {...social} />
