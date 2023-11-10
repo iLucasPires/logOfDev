@@ -51,6 +51,9 @@ select:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s; /* Set a long transition time to prevent the browser from overriding this rule */
 }
 
+.prose h1 {
+  @apply font-semibold
+}
 
 .prose .anchor {
   @apply absolute invisible no-underline;
@@ -130,6 +133,7 @@ input[type='email'] {
 
 table {
   display: block;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
@@ -143,6 +147,7 @@ table {
   @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
   counter-reset: line;
   box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 [data-rehype-pretty-code-fragment] .line {
   @apply py-1;

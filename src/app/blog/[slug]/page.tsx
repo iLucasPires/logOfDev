@@ -35,17 +35,14 @@ function WithPosts({
 }) {
   return (
     <main className="flex flex-col h-full w-full">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold">{title}</h1>
+      <div className="mb-5">
+        <h1 className="text-4xl">{title}</h1>
         <p className="text-sm">{date}</p>
       </div>
       <article
         className="prose !prose-invert"
         dangerouslySetInnerHTML={{ __html: contentHtml || "" }}
       />
-      <Link href="/blog" className="underline text-neutral-300 text-left">
-        Back to blog
-      </Link>
     </main>
   );
 }

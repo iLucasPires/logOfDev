@@ -1,9 +1,9 @@
 "use client";
 
-import { IoHomeSharp, IoNewspaperSharp, IoMail } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { IoHomeSharp, IoNewspaperSharp } from "react-icons/io5";
 
 const navItems = [
   {
@@ -16,11 +16,6 @@ const navItems = [
     href: "/blog",
     LogoNav: IoNewspaperSharp,
   },
-  {
-    title: "Contact",
-    href: "/contact",
-    LogoNav: IoMail,
-  },
 ];
 
 function ItemMenu(props: iItemMenuProps) {
@@ -30,7 +25,6 @@ function ItemMenu(props: iItemMenuProps) {
 
   return (
     <li
-      role="menuitem"
       className={
         "flex items-center gap-2 px-2 py-1 text-neutral-400 hover:text-neutral-200 " +
         effectHoverPathName
@@ -39,6 +33,7 @@ function ItemMenu(props: iItemMenuProps) {
       <Link
         href={href}
         aria-label={"Navigate to tab " + title + " page"}
+        aria-current={isPathName ? "page" : undefined}
         aria-labelledby="menu-item-label"
         className="inline-flex items-center gap-2"
       >
@@ -54,7 +49,7 @@ export default function SideBar() {
     ? "/blog"
     : usePathname() || "/";
   return (
-    <aside className="flex flex-col justify-between md:items-center md:justify-start md:gap-5">
+    <aside className="flex flex-col justify-between md:items-center md:justify-start gap-5">
       <Link className="mb-2" href="/" aria-label="Go to home page">
         <Image src="/logo.svg" alt="Logo" width={50} height={50} />
       </Link>
@@ -70,11 +65,6 @@ export default function SideBar() {
             key={navItems[1].title}
             isPathName={pathname === navItems[1].href}
             item={navItems[1]}
-          />
-          <ItemMenu
-            key={navItems[2].title}
-            isPathName={pathname === navItems[2].href}
-            item={navItems[2]}
           />
         </ul>
       </nav>
