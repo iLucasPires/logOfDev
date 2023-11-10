@@ -12,7 +12,7 @@ function WithoutPosts() {
   );
 }
 
-function WithPosts(posts: iPost[]) {
+function WithPosts({posts}: {posts: iPost[]}) {
   return (
     <ul className="flex flex-col w-full h-full gap-5">
       {posts.map((post: iPost) => (
@@ -28,7 +28,7 @@ export default function BlogPage() {
     return (
       <main className="flex flex-col h-full w-full gap-10">
         <h1 className="text-4xl font-bold">Blog</h1>
-        {posts.length === 0 ? <WithoutPosts /> : <WithPosts {...posts} />}
+        {posts.length === 0 ? <WithoutPosts /> : <WithPosts posts={posts} />}
       </main>
     );
   } catch (e) {
