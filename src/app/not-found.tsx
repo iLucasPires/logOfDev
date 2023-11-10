@@ -1,27 +1,31 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function NotFound() {
-  const urlImage = "/just-a-second-please-eric-cartman.gif";
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    fetch("https://meme-api.com/gimme")
+      .then((res) => res.json())
+      .then((data) => {
+        setImage(data.preview[2]);
+      });
+  }, []);
 
   return (
     <main className="inset-0 absolute bg-[#111010] flex flex-col items-center justify-center  px-4">
-      <Image
-        className="object-cover rounded-md"
-        src={urlImage}
-        alt="Eric Cartman"
-        width={500}
-        height={500}
-      />
+      <img className="object-cover rounded-md" src={image || ""} alt="" />
       <p className="text-neutral-400 text-center mt-4">
-        I'm sorry, I am still working on this page. Please come back later.
+        Opa! Parece que você se perdeu, volte para a home page.
       </p>
       <Link
         href="/"
         aria-label="Go to home page"
         className="underline mt-4 text-neutral-400 hover:text-neutral-200"
       >
-        Go to home page
+        Voltar para home
       </Link>
     </main>
   );

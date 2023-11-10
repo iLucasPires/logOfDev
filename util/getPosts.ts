@@ -11,7 +11,7 @@ const POST_DIR = path.join(process.cwd(), "posts");
 
 function formatDate(dateString: string): string {
   const date = new Date(Date.parse(dateString));
-  return date.toLocaleDateString("en", {
+  return date.toLocaleDateString("pt-br", {
     year: "numeric",
     month: "long",
     day: "numeric",

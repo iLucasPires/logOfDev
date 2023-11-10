@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 
-function Topics(props: iProjectProps) {
-  const { topics, language } = props;
+function Topics({ topics, language }: iProjectProps) {
   const slicedTopics = topics?.slice(0, 3) || [];
-  const hasTopics = slicedTopics.length > 0;
 
   return (
     <ul className="flex flex-col gap-2">
@@ -18,7 +16,7 @@ function Topics(props: iProjectProps) {
       <li className="flex gap-1 items-center">
         <p className="text-neutral-400 ">Topicos:</p>
         <ul className="flex flex-wrap gap-1">
-          {hasTopics ? (
+          {slicedTopics.length > 0 ? (
             slicedTopics.map((topic) => (
               <li
                 key={topic}
@@ -38,16 +36,17 @@ function Topics(props: iProjectProps) {
   );
 }
 
-function TitleCardProject(props: iProjectProps) {
-  const { name, stargazers_count } = props;
-  const colorText = stargazers_count ? "text-yellow-400" : "text-neutral-400";
-
+function TitleCardProject({ name, stargazers_count }: iProjectProps) {
   return (
     <div className="flex flex-wrap items-center justify-between">
       <h3 className="text-xl font-bold overflow-hidden overflow-ellipsis">
         {name}
       </h3>
-      <div className={`flex items-center gap-1 ${colorText}`}>
+      <div
+        className={`flex items-center gap-1 ${
+          stargazers_count ? "text-yellow-400" : "text-neutral-400"
+        }`}
+      >
         <AiFillStar aria-label="Stars" />
         <span>{stargazers_count || 0}</span>
       </div>
@@ -55,11 +54,14 @@ function TitleCardProject(props: iProjectProps) {
   );
 }
 
-export default function CardProject(props: iProjectProps) {
-  const { name, html_url, stargazers_count, description, topics, language } =
-    props;
-  const ariaLabel = `Go to ${name} repository on Github`;
-
+export default function CardProject({
+  name,
+  html_url,
+  stargazers_count,
+  description,
+  topics,
+  language,
+}: iProjectProps) {
   return (
     <li className="rounded-md border-2 border-neutral-700 hover:border-neutral-500">
       <Link
@@ -67,7 +69,7 @@ export default function CardProject(props: iProjectProps) {
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-full flex-col justify-between p-5"
-        aria-label={ariaLabel}
+        aria-label={`Go to ${name} repository on Github`}
       >
         <TitleCardProject name={name} stargazers_count={stargazers_count} />
         <p className="my-3 line-clamp-2 text-neutral-400">

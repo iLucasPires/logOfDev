@@ -1,9 +1,7 @@
 import Link from "next/link";
 import CardProject from "./CardProjetc";
 
-function ListProjects(props: { projects: iProjectProps[] }) {
-  const { projects } = props;
-
+function ListProjects({projects}: { projects: iProjectProps[] }) {
   if (projects.length) {
     const fistThreeProjects = projects.slice(0, 3);
     return (
