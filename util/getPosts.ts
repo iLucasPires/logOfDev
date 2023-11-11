@@ -18,12 +18,10 @@ function formatDate(dateString: string): string {
   });
 }
 
-function getPath(post: string): string {
-  return path.join(POST_DIR, post);
-}
-
 function handlePostData(postData: string): iPost {
-  const matterResult = matter(readFileSync(getPath(postData), DECODE));
+  const matterResult = matter(
+    readFileSync(path.join(POST_DIR, postData), DECODE)
+  );
   if (!matterResult) {
     throw new Error("No matter result");
   }
@@ -37,28 +35,22 @@ function handlePostData(postData: string): iPost {
 
 export function getPostsData() {
   try {
+    let topics: Array<string> = [];
     const allPostsData = readdirSync(POST_DIR).map((file) =>
       handlePostData(file)
     );
 
-    let postsData: iPosts[] = [];
-
     allPostsData.forEach((post) => {
-      const topic = post.topic;
-      const index = postsData.findIndex((post) => post.topic === topic);
-
-      if (index === -1) {
-        postsData.push({
-          topic,
-          posts: [post],
-        });
-      } else {
-        postsData[index].posts.push(post);
+      if (!topics.includes(post.topic)) {
+        topics.push(post.topic);
       }
     });
 
-    return postsData;
+    allPostsData.sort((firstPost, secondPost) =>
+      firstPost.date < secondPost.date ? 1 : -1
+    );
 
+    return { allPostsData, topics };
   } catch (error) {
     throw new Error("No posts data");
   }
