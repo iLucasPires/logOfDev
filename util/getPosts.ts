@@ -28,8 +28,9 @@ function handlePostData(postData: string): iPost {
     throw new Error("No matter result");
   }
   return {
-    id: postData.replace(MD_REGEX, ""),
+    file: postData.replace(MD_REGEX, ""),
     title: matterResult.data.title,
+    topic: matterResult.data.topic,
     date: formatDate(matterResult.data.date),
   };
 }
@@ -40,20 +41,36 @@ export function getPostsData() {
       handlePostData(file)
     );
 
-    return allPostsData.sort((firstPost, secondPost) =>
-      firstPost.date < secondPost.date ? 1 : -1
-    );
+    let postsData: iPosts[] = [];
+
+    allPostsData.forEach((post) => {
+      const topic = post.topic;
+      const index = postsData.findIndex((post) => post.topic === topic);
+
+      if (index === -1) {
+        postsData.push({
+          topic,
+          posts: [post],
+        });
+      } else {
+        postsData[index].posts.push(post);
+      }
+    });
+
+    return postsData;
+
   } catch (error) {
     throw new Error("No posts data");
   }
 }
 
-export async function getPostData(id: string) {
+export async function getPostData(file: string) {
   try {
-    const matterResult = matter(readFileSync(`${POST_DIR}/${id}.md`, DECODE));
+    const matterResult = matter(readFileSync(`${POST_DIR}/${file}.md`, DECODE));
     const contentHtml = await remark().use(html).process(matterResult.content);
     const blogPostWithHtml: iPost = {
-      id,
+      file,
+      topic: matterResult.data.topic,
       title: matterResult.data.title,
       date: formatDate(matterResult.data.date),
       contentHtml: contentHtml.toString(),

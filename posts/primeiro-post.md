@@ -2,6 +2,7 @@
 title: Primeiro Post
 description: Descrição do primeiro post
 date: 2023-11-10
+topic: Geral
 ---
 
 
@@ -9,12 +10,6 @@ date: 2023-11-10
 
 Este é o meu primeiro post no blog. Estou muito feliz por ter conseguido colocar o blog no ar
 e espero que vocês gostem do conteúdo que eu vou postar aqui.
-
-## Sobre mim
-
-Meu nome é Lucas, e gostaria de me apresentar um pouco. Sou um estudante entusiasta de programação,
-e estou sempre buscando aprender mais sobre o assunto. Atualmente, estou estudando C, Python e
-outras tecnologias que acho interessantes ou as quais sou obrigado a estudar haha.
 
 ## Por que criei o blog
 
@@ -56,7 +51,7 @@ Para o deploy do blog, utilizo o [Vercel](https://vercel.com/), que é uma plata
 aplicações. Optei pelo Vercel porque é muito fácil de utilizar e é gratuito haha. Além disso,
 o Vercel possui uma integração muito boa com o Next.js, facilitando bastante o deploy do site.
 
-## Conclusão
+## Mas é sobre isso
 
 E é isso! Espero sinceramente que vocês apreciem o blog e que eu consiga compartilhar muito conteúdo interessante por aqui.
 

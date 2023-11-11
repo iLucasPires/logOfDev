@@ -1,8 +1,14 @@
 interface iPost {
-  id: string;
+  file: string;
   title: string;
   date: string;
+  topic: string;
   contentHtml?: string;
+}
+
+interface iPosts {
+  topic: string;
+  posts: Array<iPost>;
 }
 
 interface iItemMenuProps {

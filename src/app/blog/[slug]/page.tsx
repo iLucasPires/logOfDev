@@ -1,16 +1,4 @@
-import { getPostData, getPostsData } from "@/util/getPosts";
-
-export function generateStaticParams() {
-  try {
-    const posts = getPostsData();
-    return posts.map((post) => ({
-      slug: post.id,
-    }));
-  } catch (e) {
-    console.error(e);
-    return [];
-  }
-}
+import { getPostData } from "@/util/getPosts";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   try {
