@@ -1,13 +1,20 @@
 import Link from "next/link";
 import CardProject from "./CardProjetc";
 
-function ListProjects({projects}: { projects: iProjectProps[] }) {
+function ListProjects({ projects }: { projects: iProjectProps[] }) {
   if (projects.length) {
-    const fistThreeProjects = projects.slice(0, 3);
     return (
       <ul className="grid grid-cols-1 gap-5 md:grid-cols-3">
-        {fistThreeProjects.map((project: iProjectProps) => (
-          <CardProject key={project.id} {...project} />
+        {projects.slice(0, 3).map((p: iProjectProps) => (
+          <CardProject
+            key={p.id}
+            name={p.name}
+            html_url={p.html_url}
+            stargazers_count={p.stargazers_count}
+            description={p.description}
+            topics={p.topics}
+            language={p.language}
+          />
         ))}
       </ul>
     );

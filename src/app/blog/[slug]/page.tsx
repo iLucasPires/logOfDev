@@ -6,12 +6,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
     const { title, date, contentHtml } = await getPostData(slug);
     return (
       <main className="flex flex-col h-full w-full">
-        <div className="mb-5">
+        <div className="mb-14">
           <h1 className="text-4xl font-bold">{title}</h1>
           <p className="text-neutral-400 italic">{date}</p>
         </div>
         <article
-          className="prose !prose-invert"
+          className="prose prose-my"
           dangerouslySetInnerHTML={{ __html: contentHtml || "" }}
         />
       </main>

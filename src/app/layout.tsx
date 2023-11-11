@@ -40,7 +40,7 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="pt-BR">
       <body className="p-10 md:pt-36 bg-[#111010] text-neutral-100">
-        <div className="flex flex-col md:flex-row align-top max-w-6xl mx-auto gap-5">
+        <div className="flex flex-col md:flex-row align-top max-w-6xl mx-auto gap-10">
           <SideBar />
           <Analytics />
           {children}
