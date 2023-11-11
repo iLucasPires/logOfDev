@@ -2,14 +2,14 @@
 title: Primeiro Post
 description: Descrição do primeiro post
 date: 2023-11-10
-topic: Geral
+updated: 2023-11-11
+topic: off-topic
 ---
 
 
 ## Olá, mundo
 
-Este é o meu primeiro post no blog. Estou muito feliz por ter conseguido colocar o blog no ar
-e espero que vocês gostem do conteúdo que eu vou postar aqui.
+Este é o meu primeiro post no blog. Neste post, irei falar um pouco do propósito desse blog e como fiz ele.
 
 ## Por que criei o blog
 
@@ -20,8 +20,6 @@ na mesma situação que eu estava.
 
 E também sigo a filosofia que diz que você só aprende de verdade quando ensina, então espero que
 eu aprenda muito com esse blog.
-
-Outro motivo é que sempre tive vontade de ter um blog, e agora que eu tenho um haha.
 
 ## O que eu vou postar aqui
 
