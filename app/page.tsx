@@ -1,6 +1,6 @@
-import FollowMe from "../components/FollowMe";
-import About from "../components/About";
-import Projects from "../components/Projects";
+import FollowMe from "./components/FollowMe";
+import About from "./components/About";
+import Projects from "./components/Projects";
 
 export default function HomePage() {
   return (

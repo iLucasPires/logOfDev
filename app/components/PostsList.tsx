@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import CardBlog from "@/src/components/CardBlog";
+import CardBlog from "@/app/components/CardBlog";
 import clsx from "clsx";
 
 function TopicsList({

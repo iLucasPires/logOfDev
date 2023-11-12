@@ -17,13 +17,13 @@ function formatDate(dateString: string): string {
 
 function handlePostData(postData: string): iPost {
   const matterResult = matter(
-    readFileSync(path.join(POST_DIR, postData, "index.md"), "utf8")
+    readFileSync(path.join(POST_DIR, postData, "index.mdx"), "utf8")
   );
   if (!matterResult) {
     throw new Error("No matter result");
   }
   return {
-    file: postData.replace(/index|\.md$/g, ""),
+    file: postData.replace(/index|\.mdx$/g, ""),
     title: matterResult.data.title,
     topic: matterResult.data.topic,
     date: formatDate(matterResult.data.date),
@@ -58,7 +58,7 @@ export function getPostsData() {
 export async function getPostData(file: string) {
   try {
     const matterResult = matter(
-      readFileSync(`${POST_DIR}/${file}/index.md`, "utf8")
+      readFileSync(`${POST_DIR}/${file}/index.mdx`, "utf8")
     );
     const contentHtml = await remark().use(html).process(matterResult.content);
     const blogPostWithHtml: iPost = {

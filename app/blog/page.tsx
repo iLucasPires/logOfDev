@@ -1,4 +1,4 @@
-import PostList from "@/src/components/PostsList";
+import PostList from "@/app/components/PostsList";
 import { getPostsData } from "@/util/getPosts";
 
 export default function BlogPage() {

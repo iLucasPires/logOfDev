@@ -1,6 +1,6 @@
 module.exports = {
   important: true,
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       typography: ({ theme }) => ({

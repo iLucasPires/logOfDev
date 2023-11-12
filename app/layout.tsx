@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Metadata } from "next";
-import SideBar from "../components/SideBar";
+import SideBar from "./components/SideBar";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
