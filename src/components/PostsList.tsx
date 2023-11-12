@@ -2,21 +2,22 @@
 
 import { useState } from "react";
 import CardBlog from "@/src/components/CardBlog";
+import clsx from "clsx";
 
 function TopicsList({
+  topics,
   selectedTopic,
   setSelectedTopic,
-  topics,
 }: {
+  topics: string[];
   selectedTopic: string[];
   setSelectedTopic: Function;
-  topics: string[];
 }) {
   function handleTopicClick(topic: string) {
-    if (selectedTopic.includes(topic)) {
-      setSelectedTopic(selectedTopic.filter((t) => t !== topic));
-    } else {
-      setSelectedTopic([...selectedTopic, topic]);
+    if (selectedTopic.includes(topic) && selectedTopic.length > 1) {
+      setSelectedTopic([topic]);
+    } else if (topics.includes(topic) && selectedTopic.length === 1) {
+      setSelectedTopic(topics);
     }
   }
 
@@ -25,12 +26,15 @@ function TopicsList({
       {topics.map((topic) => (
         <li
           key={topic}
-          className={`${
-            selectedTopic.includes(topic) ? "bg-neutral-800" : ""
-          } py-1 px-2 rounded-md cursor-pointer border-2 text-neutral-400 border-neutral-700 hover:border-neutral-400 `}
           onClick={() => handleTopicClick(topic)}
+          className={clsx(
+            "py-1 px-2 rounded-md cursor-pointer text-neutral-400 border-2 border-neutral-800",
+            selectedTopic.includes(topic)
+              ? "bg-neutral-800"
+              : "hover:border-neutral-600"
+          )}
         >
-          {topic}
+          {topic || "geral"}
         </li>
       ))}
     </ul>
@@ -59,9 +63,11 @@ export default function PostsList({
       <ul>
         {posts.map(
           (post) =>
-            selectedTopic.includes(post.topic) && (
+            selectedTopic.includes(post.topic) &&(
               <li key={post.file} className="mb-5">
                 <CardBlog
+                  status={post.status}
+                  tags={post.tags}
                   file={post.file}
                   title={post.title}
                   date={post.date}

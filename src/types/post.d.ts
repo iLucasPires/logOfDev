@@ -3,6 +3,8 @@ interface iPost {
   title: string;
   date: string;
   topic: string;
+  status: string;
+  tags: Array<string>;
   contentHtml?: string;
 }
 

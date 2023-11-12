@@ -5,7 +5,6 @@ export default function BlogPage() {
   try {
     const { topics, allPostsData } = getPostsData();
 
-
     return (
       <main className="flex flex-col h-full w-full gap-10">
         <h1 className="text-4xl font-bold">Blog</h1>

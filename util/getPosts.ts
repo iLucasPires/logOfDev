@@ -1,12 +1,9 @@
 import path from "path";
 import { readdirSync, readFileSync } from "fs";
-
 import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
 
-const DECODE = "utf8";
-const MD_REGEX = /\.md$/;
 const POST_DIR = path.join(process.cwd(), "posts");
 
 function formatDate(dateString: string): string {
@@ -20,25 +17,27 @@ function formatDate(dateString: string): string {
 
 function handlePostData(postData: string): iPost {
   const matterResult = matter(
-    readFileSync(path.join(POST_DIR, postData), DECODE)
+    readFileSync(path.join(POST_DIR, postData, "index.md"), "utf8")
   );
   if (!matterResult) {
     throw new Error("No matter result");
   }
   return {
-    file: postData.replace(MD_REGEX, ""),
+    file: postData.replace(/index|\.md$/g, ""),
     title: matterResult.data.title,
     topic: matterResult.data.topic,
     date: formatDate(matterResult.data.date),
+    tags: matterResult.data.tags,
+    status: matterResult.data.status,
   };
 }
 
 export function getPostsData() {
   try {
     let topics: Array<string> = [];
-    const allPostsData = readdirSync(POST_DIR).map((file) =>
-      handlePostData(file)
-    );
+    const allPostsData = readdirSync(POST_DIR).map((file) => {
+      return handlePostData(file);
+    });
 
     allPostsData.forEach((post) => {
       if (!topics.includes(post.topic)) {
@@ -47,7 +46,7 @@ export function getPostsData() {
     });
 
     allPostsData.sort((firstPost, secondPost) =>
-      firstPost.date < secondPost.date ? 1 : -1
+      firstPost.date < secondPost.date ? -1 : 1
     );
 
     return { allPostsData, topics };
@@ -58,12 +57,16 @@ export function getPostsData() {
 
 export async function getPostData(file: string) {
   try {
-    const matterResult = matter(readFileSync(`${POST_DIR}/${file}.md`, DECODE));
+    const matterResult = matter(
+      readFileSync(`${POST_DIR}/${file}/index.md`, "utf8")
+    );
     const contentHtml = await remark().use(html).process(matterResult.content);
     const blogPostWithHtml: iPost = {
-      file,
+      file: file,
+      tags: matterResult.data.tags,
       topic: matterResult.data.topic,
       title: matterResult.data.title,
+      status: matterResult.data.status,
       date: formatDate(matterResult.data.date),
       contentHtml: contentHtml.toString(),
     };

@@ -3,11 +3,10 @@ title: Primeiro Post
 description: Descrição do primeiro post
 date: 2023-11-10
 updated: 2023-11-11
-topic: off-topic
+topic: 
+tags: [geral, sobre o blog]
+status: ready
 ---
-
-
-## Olá, mundo
 
 Este é o meu primeiro post no blog. Neste post, irei falar um pouco do propósito desse blog e como fiz ele.
 

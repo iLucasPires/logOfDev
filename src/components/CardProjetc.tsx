@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
+import Tags from "./Tags";
 
 function Topics({
   topics,
@@ -14,25 +15,12 @@ function Topics({
     <ul className="flex flex-col gap-2">
       <li className="flex gap-1">
         <p className="text-neutral-400 ">Linguagem:</p>
-        <p className="bg-neutral-800 rounded-md px-2 text-neutral-400 ">
-          {language || "not found"}
-        </p>
+        <Tags tags={[language || "not found"]} />
       </li>
 
       <li className="flex gap-1 items-center">
         <p className="text-neutral-400 ">Topicos:</p>
-        {slicedTopics.length > 0 && (
-          <ul className="flex flex-wrap gap-1">
-            {slicedTopics.map((topic) => (
-              <li
-                key={topic}
-                className="bg-neutral-800 rounded-md px-2 text-neutral-400"
-              >
-                {topic || "not found"}
-              </li>
-            ))}
-          </ul>
-        )}
+        <Tags tags={slicedTopics} />
       </li>
     </ul>
   );
