@@ -34,7 +34,7 @@ function LinkContatc(props: iSocialMediaProps) {
   );
 }
 
-export default function FollowMe() {
+export default function () {
   return (
     <div className="mb-14">
       <h3 className="text-2xl font-bold">Minhas redes sociais</h3>

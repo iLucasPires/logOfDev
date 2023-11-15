@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function NotFound() {
+export default function () {
   const [image, setImage] = useState("");
 
   useEffect(() => {

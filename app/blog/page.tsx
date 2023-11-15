@@ -1,14 +1,14 @@
 import PostList from "@/app/components/PostsList";
-import { getPostsData } from "@/util/getPosts";
+import { getPostsData } from "@/lib/getPosts";
 
-export default function BlogPage() {
+export default function () {
   try {
     const { topics, allPostsData } = getPostsData();
 
     return (
       <main className="flex flex-col h-full w-full gap-10">
         <h1 className="text-4xl font-bold">Blog</h1>
-        <PostList posts={allPostsData}  topics={topics} />
+        <PostList posts={allPostsData} topics={topics} />
       </main>
     );
   } catch (e) {

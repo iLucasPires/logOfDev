@@ -41,7 +41,7 @@ function TopicsList({
   );
 }
 
-export default function PostsList({
+export default function ({
   posts,
   topics,
 }: {

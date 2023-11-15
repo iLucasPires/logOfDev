@@ -2,7 +2,7 @@ import Link from "next/link";
 import Tags from "./Tags";
 import clsx from "clsx";
 
-export default function CardBlog({ title, date, file, tags, status }: iPost) {
+export default function ({ title, date, file, tags, status }: iPost) {
   return (
     <div className="border-neutral-700 border-2 rounded-md hover:border-neutral-500 relative">
       {status === "draft" && (
@@ -21,7 +21,7 @@ export default function CardBlog({ title, date, file, tags, status }: iPost) {
           {title || "Não sei porque está sem nome"}
         </h3>
         <p className="text-neutral-400 mb-5">{date}</p>
-        <Tags tags={tags} />
+        <Tags tags={tags || []} />
       </Link>
     </div>
   );

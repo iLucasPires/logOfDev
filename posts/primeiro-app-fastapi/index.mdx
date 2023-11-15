@@ -12,3 +12,11 @@ tags:
 status: draft
 ---
 
+```js
+import { Client } from '@neondatabase/serverless';
+let client = new Client(env.DATABASE_URL);
+let {
+  rows: [{ now }],
+} = await client.query('select now();');
+```
+

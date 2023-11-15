@@ -1,4 +1,4 @@
-import { getPostData } from "@/util/getPosts";
+import { getPostData } from "@/lib/getPosts";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   try {

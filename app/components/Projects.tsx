@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CardProject from "./CardProjetc";
+import dataProjects from "@/lib/getProjects";
 
 function ListProjects({ projects }: { projects: iProjectProps[] }) {
   if (projects.length) {
@@ -27,15 +28,8 @@ function ListProjects({ projects }: { projects: iProjectProps[] }) {
   );
 }
 
-export default async function Projects() {
-  const urlApi =
-    "https://api.github.com/users/ilucaspires/repos?sort=created&direction=desc";
-  const urlRepo = "https://github.com/iLucasPires?tab=repositories";
-
-  const response = await fetch(urlApi, {
-    next: { revalidate: 3600 },
-  });
-  const projects = await response.json();
+export default async function () {
+  const projects = await dataProjects;
 
   return (
     <div className="flex w-full flex-col gap-5">
@@ -44,7 +38,7 @@ export default async function Projects() {
         <Link
           className="text-neutral-400 underline hover:text-neutral-200"
           aria-label="Go to my Github profile"
-          href={urlRepo}
+          href="/projects"
         >
           Ver mais
         </Link>

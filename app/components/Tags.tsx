@@ -1,4 +1,4 @@
-export default function Tags({ tags }: { tags: string[] }) {
+export default function ({ tags }: { tags: string[] }) {
   if (tags.length === 0)
     return (
       <p className="bg-neutral-800 rounded-md px-2 text-neutral-400">

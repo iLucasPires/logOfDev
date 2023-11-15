@@ -1,50 +1,9 @@
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
+import clsx from "clsx";
 import Tags from "./Tags";
 
-function Topics({
-  topics,
-  language,
-}: {
-  topics: string[] | undefined;
-  language: string | undefined;
-}) {
-  const slicedTopics = topics?.slice(0, 3) || [];
-
-  return (
-    <ul className="flex flex-col gap-2">
-      <li className="flex gap-1">
-        <p className="text-neutral-400 ">Linguagem:</p>
-        <Tags tags={[language || "not found"]} />
-      </li>
-
-      <li className="flex gap-1 items-center">
-        <p className="text-neutral-400 ">Topicos:</p>
-        <Tags tags={slicedTopics} />
-      </li>
-    </ul>
-  );
-}
-
-function TitleCardProject({ name, stargazers_count }: iProjectProps) {
-  return (
-    <div className="flex flex-wrap items-center justify-between">
-      <h3 className="text-xl font-bold overflow-hidden overflow-ellipsis">
-        {name || "Não sei porque está sem nome"}
-      </h3>
-      <div
-        className={`flex items-center gap-1 ${
-          stargazers_count ? "text-yellow-400" : "text-neutral-400"
-        }`}
-      >
-        <AiFillStar aria-label="Stars" />
-        <span>{stargazers_count || 0}</span>
-      </div>
-    </div>
-  );
-}
-
-export default function CardProject({
+export default function ({
   name,
   html_url,
   stargazers_count,
@@ -61,11 +20,34 @@ export default function CardProject({
         className="flex h-full flex-col justify-between p-5"
         aria-label={`Go to ${name} repository on Github`}
       >
-        <TitleCardProject name={name} stargazers_count={stargazers_count} />
+        <div className="flex flex-wrap items-center justify-between">
+          <h3 className="text-xl font-bold overflow-hidden overflow-ellipsis">
+            {name || "Não sei porque está sem nome"}
+          </h3>
+          <div
+            className={clsx(
+              "flex items-center gap-1",
+              stargazers_count ? "text-yellow-400" : "text-neutral-400"
+            )}
+          >
+            <AiFillStar aria-label="Stars" />
+            <span>{stargazers_count || 0}</span>
+          </div>
+        </div>
         <p className="my-3 line-clamp-2 text-neutral-400">
           {description || "Sem descrição 😢, mas você pode ver o codigo!"}
         </p>
-        <Topics topics={topics} language={language} />
+        <ul className="flex flex-col gap-2">
+          <li className="flex gap-1">
+            <p className="text-neutral-400 ">Linguagem:</p>
+            <Tags tags={[language || "not found"]} />
+          </li>
+
+          <li className="flex gap-1 items-center">
+            <p className="text-neutral-400 ">Topicos:</p>
+            <Tags tags={topics?.slice(0, 3) || []} />
+          </li>
+        </ul>
       </Link>
     </li>
   );

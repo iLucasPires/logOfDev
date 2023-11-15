@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: any) {
+export default function ({ children }: any) {
   return (
     <html lang="pt-BR">
       <body className="p-10 md:pt-36 bg-[#111010] text-neutral-100">
