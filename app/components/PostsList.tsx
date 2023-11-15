@@ -41,7 +41,7 @@ function TopicsList({
   );
 }
 
-export default function ({
+export default function PostsList({
   posts,
   topics,
 }: {
@@ -63,7 +63,8 @@ export default function ({
       <ul>
         {posts.map(
           (post) =>
-            selectedTopic.includes(post.topic) &&(
+            post.topic &&
+            selectedTopic.includes(post.topic) && (
               <li key={post.file} className="mb-5">
                 <CardBlog
                   status={post.status}

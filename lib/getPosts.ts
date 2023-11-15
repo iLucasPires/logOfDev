@@ -40,14 +40,20 @@ export function getPostsData() {
     });
 
     allPostsData.forEach((post) => {
-      if (!topics.includes(post.topic)) {
+      if (post.topic && !topics.includes(post.topic)) {
         topics.push(post.topic);
       }
     });
 
-    allPostsData.sort((firstPost, secondPost) =>
-      firstPost.date < secondPost.date ? -1 : 1
-    );
+    allPostsData.sort((firstPost, secondPost) => {
+      if (firstPost.date === undefined) {
+        return -1;
+      }
+      if (secondPost.date === undefined) {
+        return 1;
+      }
+      return firstPost.date > secondPost.date ? -1 : 1;
+    });
 
     return { allPostsData, topics };
   } catch (error) {
