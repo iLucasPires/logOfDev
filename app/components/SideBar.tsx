@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { IoHomeSharp, IoNewspaperSharp } from "react-icons/io5";
+import { IoHomeSharp } from "react-icons/io5";
 import { AiFillProject } from "react-icons/ai";
 
 const navItems = [
@@ -12,16 +12,12 @@ const navItems = [
     href: "/",
     LogoNav: IoHomeSharp,
   },
-  {
-    title: "Blog",
-    href: "/blog",
-    LogoNav: IoNewspaperSharp,
-  },
+
   {
     title: "Projetos",
     href: "/projects",
     LogoNav: AiFillProject,
-  }
+  },
 ];
 
 function ItemMenu(props: iItemMenuProps) {
@@ -67,15 +63,11 @@ export default function () {
             isPathName={pathname === navItems[0].href}
             item={navItems[0]}
           />
+
           <ItemMenu
             key={navItems[1].title}
             isPathName={pathname === navItems[1].href}
             item={navItems[1]}
-          />
-          <ItemMenu
-            key={navItems[2].title}
-            isPathName={pathname === navItems[2].href}
-            item={navItems[2]}
           />
         </ul>
       </nav>

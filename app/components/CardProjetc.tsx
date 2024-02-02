@@ -7,6 +7,7 @@ export default function ({
   name,
   html_url,
   stargazers_count,
+
   description,
   topics,
   language,
@@ -39,7 +40,7 @@ export default function ({
         </p>
         <ul className="flex flex-col gap-2">
           <li className="flex gap-1">
-            <p className="text-neutral-400 ">Linguagem:</p>
+            <p className="text-neutral-400 ">Tecnologias:</p>
             <Tags tags={[language || "not found"]} />
           </li>
 
