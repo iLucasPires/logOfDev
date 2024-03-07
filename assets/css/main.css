@@ -1,0 +1,15 @@
+* {
+  color-scheme: dark;
+  scrollbar-width: thin;
+  font-family: "Exo 2", sans-serif;
+}
+
+body {
+  @apply bg-neutral-950 text-neutral-400;
+  @apply min-h-screen h-screen;
+}
+
+div#__nuxt {
+  @apply flex flex-col items-center;
+  @apply w-full h-full;
+}

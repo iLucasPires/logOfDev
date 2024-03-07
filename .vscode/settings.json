@@ -2,21 +2,15 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
     "node_modules": true,
-    ".git": true,
-    ".next": true,
-    "postcss.config.js": true,
-
     "tsconfig.build.json": true,
     "tslint.json": true,
     "package-lock.json": true,
     "next-env.d.ts": true,
     ".vscode": true,
+    ".nuxt": true,
+    ".output": true,
+    "tsconfig.json": true,
+
   }
 }
