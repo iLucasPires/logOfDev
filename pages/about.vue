@@ -1,81 +1,70 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const aboutMeList = [
   {
-    title: "Quem sou eu?",
-    text: `Eu sou um desenvolvedor web, com foco em desenvolvimento front-end. 
-           Atualmente estou trabalhando com Nuxt e Tailwind, e também estou estudando Next.js. 
-           Também estou estudando desenvolvimento back-end com Django e FastAPI.`,
+    title: t("about.bio.p1.title"),
+    text: t("about.bio.p1.text"),
   },
   {
-    title: "O que estou procurando?",
-    text: `Estou procurando oportunidades para trabalhar com desenvolvimento web, com foco em desenvolvimento front-end. 
-           Também estou procurando oportunidades para trabalhar com Python e C/C++.`,
+    title: t("about.bio.p2.title"),
+    text: t("about.bio.p2.text"),
   },
   {
-    title: "O que estou estudando?",
-    text: `Estou estudando desenvolvimento web com Nuxt e Tailwind, e também estou estudando Next.js. 
-           Também estou estudando desenvolvimento back-end com Django e FastAPI. 
-           Também estou estudando C/C++ e Python.`, 
+    title: t("about.bio.p3.title"),
+    text: t("about.bio.p3.text"),
   },
 ];
 
 const skillMeList = [
   {
-    title: "Front-end",
+    title: t("about.skills.frontend.title"),
+    text: t("about.skills.frontend.text"),
     icon: "i-mdi:drawing",
     skills: [
-      {
-        name: "TypeScript",
-        icon: "i-tabler:brand-typescript",
-        level: "begginner",
-      },
-      { name: "Nuxt", icon: "i-tabler:brand-nuxt", level: "intermediate" },
-      { name: "Next", icon: "i-tabler:brand-nextjs", level: "intermediate" },
-      {
-        name: "Tailwind",
-        icon: "i-tabler:brand-tailwind",
-        level: "intermediate",
-      },
-      { name: "React", icon: "i-tabler:brand-react", level: "begginner" },
-      { name: "Svelte", icon: "i-tabler:brand-svelte", level: "begginner" },
+      { name: "TypeScript", icon: "i-tabler:brand-typescript" },
+      { name: "Nuxt", icon: "i-tabler:brand-nuxt" },
+      { name: "Next", icon: "i-tabler:brand-nextjs" },
+      { name: "Tailwind", icon: "i-tabler:brand-tailwind" },
+      { name: "React", icon: "i-tabler:brand-react" },
+      { name: "Svelte", icon: "i-tabler:brand-svelte" },
     ],
-    text: `I have experience with front-end development, working with Nuxt and Tailwind. 
-           I am also studying Next.js and Svelte.`,
   },
   {
-    title: "Back-end",
+    title: t("about.skills.backend.title"),
+    text: t("about.skills.backend.text"),
     icon: "i-mdi:server-minus",
     skills: [
-      { name: "Python", icon: "i-tabler:brand-python", level: "begginner" },
-      { name: "Rust", icon: "i-tabler:brand-rust", level: "begginner" },
-      { name: "C/C++", icon: "i-tabler:brand-cpp", level: "intermediate" },
-      { name: "Django", icon: "i-tabler:brand-django", level: "intermediate" },
+      { name: "Python", icon: "i-tabler:brand-python" },
+      { name: "Rust", icon: "i-tabler:brand-rust" },
+      { name: "C/C++", icon: "i-tabler:brand-cpp" },
+      { name: "Django", icon: "i-tabler:brand-django" },
     ],
-    text: `I am studying back-end development with Django and FastAPI.
-           I am also studying Python and C/C++.`,
   },
   {
-    title: "Tools and Others",
+    title: t("about.skills.other.title"),
+    text: t("about.skills.other.text"),
     icon: "i-mdi:tools",
     skills: [
-      { name: "Git", icon: "i-tabler:brand-git", level: "intermediate" },
-      { name: "Docker", icon: "i-tabler:brand-docker", level: "intermediate" },
+      { name: "Git", icon: "i-tabler:brand-git" },
+      { name: "Docker", icon: "i-tabler:brand-docker" },
     ],
-    text: `I have experience with DevOps, working with Git and Docker.`,
   },
 ];
 </script>
 
 <template>
   <main class="space-y-10">
-    <h1 class="text-4xl font-black uppercase text-rainbow">About Me</h1>
+    <h1 class="text-4xl font-black uppercase text-rainbow">
+      {{ $t("about.title") }}
+    </h1>
     <div class="space-y-5">
-      <h2 class="text-3xl font-bold">My Bio</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <h2 class="text-3xl font-bold">{{ $t("about.bio.title") }}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <ul class="space-y-4">
-          <li v-for="item in aboutMeList" :key="item.title">
+          <li class="space-y-2" v-for="item in aboutMeList" :key="item.title">
             <h3 class="text-xl font-semibold">{{ item.title }}</h3>
-            <p>{{ item.text }}</p>
+            <p class="text-neutral-500">{{ item.text }}</p>
           </li>
         </ul>
         <div class="size-full flex flex-col items-center">
@@ -91,7 +80,7 @@ const skillMeList = [
     </div>
 
     <div class="space-y-5">
-      <h2 class="text-3xl font-black">My Skills</h2>
+      <h2 class="text-3xl font-black">{{ $t("about.skills.title") }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div v-for="item in skillMeList" :key="item.title">
           <MCardAbout

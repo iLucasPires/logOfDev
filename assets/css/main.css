@@ -13,3 +13,7 @@ div#__nuxt {
   @apply flex flex-col items-center;
   @apply w-full h-full;
 }
+
+.prose img {
+  @apply rounded-lg w-full;
+}

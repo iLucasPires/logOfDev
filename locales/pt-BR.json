@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "início",
+    "about": "sobre",
+    "contact": "contato",
+    "blog": "blog",
+    "projects": "projetos"
+  },
+
+  "footer": {
+    "madeBy": "Desenvolvido por",
+    "corpyright": "My Portfolio. Todos os direitos reservados."
+  },
+
+  "home": {
+    "title": "garoto de programa",
+    "btn_resume": "Currículo",
+    "btn_contact": "Contato"
+  },
+
+  "about": {
+    "title": "Sobre mim",
+    "bio": {
+      "title": "Minha Bio",
+      "p1": {
+        "title": "Quem sou eu?",
+        "text": "Eu sou um desenvolvedor web, com foco em desenvolvimento front-end. Atualmente estou trabalhando com Nuxt e Tailwind, e também estou estudando Next.js. Também estou estudando desenvolvimento back-end com Django e FastAPI."
+      },
+      "p2": {
+        "title": "O que estou procurando?",
+        "text": "Estou procurando oportunidades para trabalhar com desenvolvimento web, com foco em desenvolvimento front-end. Também estou procurando oportunidades para trabalhar com Python e C/C++."
+      },
+      "p3": {
+        "title": "O que estou estudando?",
+        "text": "Estou estudando desenvolvimento web com Nuxt e Tailwind, e também estou estudando Next.js. Também estou estudando desenvolvimento back-end com Django e FastAPI. Também estou estudando C/C++ e Python."
+      }
+    },
+    "skills": {
+      "title": "Habilidades",
+      "frontend": {
+        "title": "Front-end",
+        "text": "Tenho experiência com desenvolvimento front-end, trabalhando com Nuxt e Tailwind. Também estou estudando Next.js e Svelte."
+      },
+      "backend": {
+        "title": "Back-end",
+        "text": "Estou estudando desenvolvimento back-end com Django e FastAPI. Também estou estudando Python e C/C++."
+      },
+      "other": {
+        "title": "Outras habilidades",
+        "text": "Tenho experiência com DevOps, trabalhando com Git e Docker."
+      }
+    }
+  }
+}

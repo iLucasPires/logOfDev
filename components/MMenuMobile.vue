@@ -19,8 +19,14 @@ const isOpen = ref(false);
     neutral
   />
 
+  <div
+    class="fixed inset-0 z-10 bg-neutral-900/60 block"
+    v-show="isOpen"
+    @click="isOpen = false"
+  />
+
   <nav
-    class="fixed inset-x-0 bottom-0 top-1/4 z-10 bg-neutral-900 transition-transform duration-500"
+    class="fixed inset-x-0 bottom-0 top-1/4 z-20 bg-neutral-950 transition-transform duration-500 "
     :class="isOpen ? 'translate-y-0' : 'translate-y-full'"
   >
     <button

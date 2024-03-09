@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-const { slug } = useRoute().params;
+const { fullPath } = useRoute();
 </script>
 
 <template>
   <article class="prose">
-    <ContentDoc v-bind:path="(slug as string)" v-slot="{ doc }">
+    <ContentDoc v-bind:path="(fullPath as string)" v-slot="{ doc }">
       <header>
         <h1>{{ doc.title }}</h1>
         <p>{{ doc.description }}</p>
       </header>
 
-      <div class="mt-6">
+      <div class="mt-6 markdown">
         <ContentRenderer v-bind:value="doc" />
       </div>
     </ContentDoc>

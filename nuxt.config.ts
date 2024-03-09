@@ -14,27 +14,29 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "nuxt-content-assets",
-    "vue3-carousel-nuxt",
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
   ],
   i18n: {
     customRoutes: "config",
-    pages: {
-      index: {
-        pt: "/pt",
-        en: "/",
+    strategy: "prefix_except_default",
+    langDir: "locales/",
+    locales: [
+      {
+        code: "en",
+        iso: "en-US",
+        name: "English",
+        file: "en-US.json",
       },
-      about: {
-        pt: "/sobre",
-        en: "/about",
+      {
+        code: "pt",
+        iso: "pt-BR",
+        name: "Português",
+        file: "pt-BR.json",
       },
-      projects: {
-        pt: "/projetos",
-        en: "/projects",
-      },
-    },
+    ],
+  
   },
   googleFonts: {
     families: {
