@@ -1,16 +1,11 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "files.exclude": {
-    "node_modules": true,
-    "tsconfig.build.json": true,
-    "tslint.json": true,
-    "package-lock.json": true,
-    "next-env.d.ts": true,
-    ".vscode": true,
-    ".nuxt": true,
-    ".output": true,
-    "tsconfig.json": true,
-
-  }
+    // "files.exclude": {
+    //     ".env": true,
+    //     ".nuxt": true,
+    //     ".vscode": true,
+    //     "**/.git": true,
+    //     ".gitignore": true,
+    //     "bun.lockb": true,
+    //     "node_modules": true,
+    // }
 }

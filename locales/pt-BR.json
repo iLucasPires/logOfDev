@@ -7,15 +7,26 @@
     "projects": "projetos"
   },
 
+  "404": {
+    "title": "Erro",
+    "text": "Página não encontrada"
+  },
+
+  "postNotFound": {
+    "title": "Parece que o posto que você está procurando não existe mais ou foi removido.",
+    "subtitle": "mas você pode ver outros posts",
+    "btn": "Ver outros posts"
+  },
+
   "footer": {
     "madeBy": "Desenvolvido por",
     "corpyright": "My Portfolio. Todos os direitos reservados."
   },
 
   "home": {
-    "title": "garoto de programa",
     "btn_resume": "Currículo",
-    "btn_contact": "Contato"
+    "email_confirm": "E-mail copiado para a área de transferência, \nGostaria de continuar no seu cliente de e-mail?",
+    "email_body": "Ei lucas! Vamos trocar uma ideia sobre..."
   },
 
   "about": {
@@ -49,6 +60,17 @@
         "title": "Outras habilidades",
         "text": "Tenho experiência com DevOps, trabalhando com Git e Docker."
       }
+    }
+  },
+  "blog": {
+    "latestPosts": "Últimos Posts",
+    "otherPosts": "Outros Posts",
+    
+    "description": "Log do dev é um projeto que comecei para compartilhar experiências e conhecimentos no mundo do desenvolvimento. Espero que você goste e que seja útil para você.",
+
+    "notFound": {
+      "title": "Desculpe, mas não há posts aqui.",
+      "description": "Eu trabalho nisso, mas ainda não há posts aqui. Por favor, volte mais tarde."
     }
   }
 }

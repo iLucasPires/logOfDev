@@ -13,15 +13,13 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@nuxt/image",
     "@nuxt/content",
-    "nuxt-content-assets",
-    "@nuxtjs/google-fonts",
-    "@vueuse/nuxt",
     "@nuxtjs/i18n",
   ],
   i18n: {
     customRoutes: "config",
-    strategy: "prefix_except_default",
+    strategy: "prefix_and_default",
     langDir: "locales/",
+    defaultLocale: "en",
     locales: [
       {
         code: "en",
@@ -36,16 +34,27 @@ export default defineNuxtConfig({
         file: "pt-BR.json",
       },
     ],
-  
-  },
-  googleFonts: {
-    families: {
-      "Exo 2": [400, 500, 600, 700],
+    pages: {
+      about: {
+        en: "/about",
+        pt: "/sobre",
+      },
+      contact: {
+        en: "/contact",
+        pt: "/contato",
+      },
+
+      projects: {
+        en: "/projects",
+        pt: "/projetos",
+      },
     },
   },
+
   runtimeConfig: {
     public: {
       imgProfile: "https://avatars.githubusercontent.com/u/68610729?v=4",
+      email: process.env.EMAIL,
     },
   },
 });

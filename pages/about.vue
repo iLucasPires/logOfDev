@@ -55,16 +55,31 @@ const skillMeList = [
 
 <template>
   <main class="space-y-10">
-    <h1 class="text-4xl font-black uppercase text-rainbow">
-      {{ $t("about.title") }}
-    </h1>
+    <AText
+      tag="h1"
+      color="rainbow"
+      fontCase="upper"
+      weight="black"
+      :text="$t('about.title')"
+    />
     <div class="space-y-5">
-      <h2 class="text-3xl font-bold">{{ $t("about.bio.title") }}</h2>
+      <AText
+        tag="h2"
+        weight="bold"
+        fontCase="upper"
+        :text="$t('about.bio.title')"
+      />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <ul class="space-y-4">
           <li class="space-y-2" v-for="item in aboutMeList" :key="item.title">
-            <h3 class="text-xl font-semibold">{{ item.title }}</h3>
-            <p class="text-neutral-500">{{ item.text }}</p>
+            <AText
+              tag="h3"
+              size="sm"
+              weight="bold"
+              fontCase="capitalize"
+              :text="item.title"
+            />
+            <p class="text-neutral-500" v-html="item.text" />
           </li>
         </ul>
         <div class="size-full flex flex-col items-center">
@@ -80,7 +95,12 @@ const skillMeList = [
     </div>
 
     <div class="space-y-5">
-      <h2 class="text-3xl font-black">{{ $t("about.skills.title") }}</h2>
+      <AText
+        tag="h2"
+        weight="bold"
+        fontCase="upper"
+        :text="$t('about.skills.title')"
+      />
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div v-for="item in skillMeList" :key="item.title">
           <MCardAbout

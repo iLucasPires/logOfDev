@@ -6,15 +6,26 @@
     "blog": "blog",
     "projects": "projects"
   },
-  "footer" : {
-    "madeBy" : "Made by",
-    "corpyright" : "My Portfolio. All rights reserved."
+  "404": {
+    "title": "Page not found",
+    "text": "Back to home"
+  },
+
+  "postNotFound": {
+    "title": "Looks like this post doesn't exist or has been removed.",
+    "subtitle": "but you can check out other posts",
+    "btn": "Back to blog"
+  },
+
+  "footer": {
+    "madeBy": "Made by",
+    "corpyright": "My Portfolio. All rights reserved."
   },
 
   "home": {
-    "title": "web developer",
     "btn_resume": "Resume",
-    "btn_contact": "Contact"
+    "email_confirm": "My email was copied to your clipboard. \nDo you want to open your email client to send me a message?",
+    "email_body": "Hey Lucas! Let's exchange some ideas about..."
   },
   "about": {
     "title": "About me",
@@ -47,6 +58,18 @@
         "title": "Tools and Other Skills",
         "text": "I have experience with DevOps, working with Git and Docker."
       }
+    }
+  },
+
+  "blog": {
+    "latestPosts": "Latest Posts",
+    "otherPosts": "Other Posts",
+
+    "description": "log of dev is a project that I started to share experiences and knowledge in the world of development, I hope you like it and that it is useful to you.",
+
+    "notFound": {
+      "title": "I sorry, but there are no posts yet.",
+      "description": "I'm working on it, I promise."
     }
   }
 }

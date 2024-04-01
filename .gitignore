@@ -42,3 +42,4 @@ next-env.d.ts
 sendgrid.env
 
 posts/test*.md
+node_modules

@@ -1,18 +1,24 @@
 <script lang="ts" setup>
-const { fullPath } = useRoute();
+
+const { data: post } = await useAsyncData("post", () =>
+  queryContent(useRoute().fullPath).findOne()
+);
+
+if (!post.value) {
+  throw createError({
+    statusCode: 404,
+    message: "Post not found",
+  });
+}
 </script>
 
 <template>
   <article class="prose">
-    <ContentDoc v-bind:path="(fullPath as string)" v-slot="{ doc }">
-      <header>
-        <h1>{{ doc.title }}</h1>
-        <p>{{ doc.description }}</p>
-      </header>
-
-      <div class="mt-6 markdown">
-        <ContentRenderer v-bind:value="doc" />
-      </div>
-    </ContentDoc>
+    <ContentRenderer :content="post">
+      <h1 v-text="post?.title" />
+      <template v-if="post">
+        <ContentRendererMarkdown :value="post" />
+      </template>
+    </ContentRenderer>
   </article>
 </template>
