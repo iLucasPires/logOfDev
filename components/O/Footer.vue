@@ -22,8 +22,8 @@ const corpyright = `&copy; ${year} - ${t("footer.corpyright")}`;
           target="_blank"
           class="cursor-pointer"
           v-for="item in socialMedia"
-          v-on:key="item.name"
-          v-on:to="item.link"
+          v-bind:key="item.name"
+          v-bind:to="item.link"
         >
           {{ item.name }}
         </NuxtLink>

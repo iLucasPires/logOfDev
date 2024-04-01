@@ -38,8 +38,8 @@ const positionClasses = {
 
 <template>
   <component
-    v-on:is="tag"
-    v-on:class="
+    v-bind:is="tag"
+    v-bind:class="
       [
         'flex items-center gap-2 rounded',
         'active:(scale-95 brightness-95) transition-all duration-200',
@@ -50,7 +50,7 @@ const positionClasses = {
       ]
     "
   >
-    <i v-if="icon" v-on:class="[icon]" />
+    <i v-if="icon" v-bind:class="[icon]" />
     <span v-if="text" class="uppercase text-sm">{{ text }}</span>
   </component>
 </template>

@@ -13,8 +13,8 @@ const { createdAt } = defineProps<{
     <NuxtImg
       v-if="cover"
       class="rounded-lg w-full h-48 object-cover saturate-0 group-hover:saturate-100 transition-all"
-      v-on:src="cover"
-      v-on:alt="title"
+      v-bind:src="cover"
+      v-bind:alt="title"
       width="400"
       height="200"
     />
@@ -26,7 +26,7 @@ const { createdAt } = defineProps<{
         <div class="flex items center space-x-2">
           <time
             class="text-neutral-500"
-            v-on:datetime="createdAt"
+            v-bind:datetime="createdAt"
             v-text="createdAt"
           />
           <span class="text-neutral-500">•</span>
