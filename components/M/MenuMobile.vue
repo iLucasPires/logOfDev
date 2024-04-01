@@ -40,7 +40,7 @@ const handleRoute = (path: string) => {
 
     <menu class="space-y-2 p-4">
       <AButton
-        class="w-full"
+        custom="w-full text-sm"
         position="left"
         v-bind:key="page.name"
         v-bind:icon="page.icon"

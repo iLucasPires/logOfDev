@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-const pages = [
-  { name: "home", path: "/", icon: "i-carbon-home" },
-  { name: "about", path: "about", icon: "i-carbon-user" },
-  { name: "blog", path: "blog", icon: "i-carbon-blog" },
-];
+defineProps<{
+  pages: {
+    name: string;
+    path: string;
+    icon: string;
+  }[];
+}>();
 const localePath = useLocalePath();
 </script>
 
