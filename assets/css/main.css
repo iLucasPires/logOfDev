@@ -6,11 +6,11 @@
 
 body {
   @apply bg-neutral-950 text-neutral-400;
-  @apply min-h-screen h-screen;
+  @apply min-h-lvh h-lvh ;
 }
 
 div#__nuxt {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center relative;
   @apply w-full h-full;
 }
 
