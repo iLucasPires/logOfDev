@@ -19,7 +19,7 @@ const localePath = useLocalePath();
         v-for="page in pages"
       >
         <i v-bind:class="page.icon" />
-        <span class="uppercase text-sm" v-text="$t(`nav.${page.name}`)" />
+        <span class="uppercase text-sm" v-text="page.name" />
       </NuxtLinkLocale>
     </menu>
   </nav>

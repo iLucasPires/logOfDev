@@ -6,6 +6,7 @@
     "blog": "blog",
     "projects": "projects"
   },
+  
   "404": {
     "title": "Page not found",
     "text": "Back to home"

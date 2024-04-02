@@ -1,10 +1,12 @@
 <script lang="ts" setup>
+const { t } = useI18n();
 const langMenuIsOpen = ref(false);
-const pages = [
-  { name: "home", path: "/", icon: "i-carbon-home" },
-  { name: "about", path: "about", icon: "i-carbon-user" },
-  { name: "blog", path: "blog", icon: "i-carbon-blog" },
-];
+
+const pages = computed(() => [
+  { name: t("nav.home"), path: "/", icon: "i-carbon-home" },
+  { name: t("nav.about"), path: "about", icon: "i-carbon-user" },
+  { name: t("nav.blog"), path: "blog", icon: "i-carbon-blog" },
+]);
 </script>
 
 <template>
@@ -28,7 +30,6 @@ const pages = [
         />
         <MMenuMobile v-bind:pages="pages" />
       </div>
-
     </div>
   </header>
 </template>
