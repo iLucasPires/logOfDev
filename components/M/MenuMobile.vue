@@ -37,6 +37,7 @@ const navigateTo = (path: string) => {
   const localePath = useLocalePath();
   const router = useRouter();
 
+  document.body.style.overflow = "auto";
   router.push(localePath(path));
   menuIsOpen.value = false;
 };
@@ -63,12 +64,14 @@ const navigateTo = (path: string) => {
     }"
   >
     <button
-      class="h-2 w-20 m-(x-auto t-4) block rounded bg-neutral-700"
+      class="w-full h-4 flex items-center justify-center p-4"
       v-on:touchstart="buttonDown = true"
       v-on:touchend="handleTouchEnd"
       v-on:click="handleClick"
       v-on:touchmove="handleTouch"
-    />
+    >
+    <div class="rounded bg-neutral-700 active:bg-neutral-600 hover:bg-neutral-600 w-20 h-2" />
+  </button>
 
     <menu class="space-y-2 p-4">
       <AButton
