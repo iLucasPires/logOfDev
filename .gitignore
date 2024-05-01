@@ -43,3 +43,5 @@ sendgrid.env
 
 posts/test*.md
 node_modules
+
+.env

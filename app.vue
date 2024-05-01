@@ -1,7 +1,7 @@
 <template>
-  <OHeader />
-  <div class="flex-auto maxp w-full py-15">
+  <CoreNavBar />
+  <div class="flex-1">
     <NuxtPage />
   </div>
-  <OFooter />
+  <CoreFooter />
 </template>

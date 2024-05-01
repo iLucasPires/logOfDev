@@ -1,20 +1,22 @@
 <script setup lang="ts">
-const { createdAt } = defineProps<{
-  title: string;
-  cover: string;
-  timeToRead: number;
-  description: string;
-  createdAt: string;
-}>();
+  const { createdAt } = defineProps<{
+    title: string;
+    cover: string;
+    timeToRead: number;
+    description: string;
+    createdAt: string;
+  }>();
 </script>
 
 <template>
-  <div class="size-full rounded-lg p-4 border border-neutral-900 group hover:(border-rainbow bg-neutral-900/60)">
+  <div
+    class="size-full rounded-lg p-4 border border-neutral-9 group hover:(border-rainbow bg-neutral-9/60)"
+  >
     <NuxtImg
       v-if="cover"
-      class="rounded-lg w-full h-48 object-cover saturate-0 group-hover:saturate-100 transition-all"
-      v-bind:src="cover"
-      v-bind:alt="title"
+      class="rounded-lg h-75 object-cover w-full saturate-0 group-hover:saturate-100 transition-all"
+      :src="cover"
+      :alt="title"
       width="400"
       height="200"
     />
@@ -24,13 +26,9 @@ const { createdAt } = defineProps<{
 
       <div class="flex justify-between items-center">
         <div class="flex items center space-x-2">
-          <time
-            class="text-neutral-500"
-            v-bind:datetime="createdAt"
-            v-text="createdAt"
-          />
-          <span class="text-neutral-500">•</span>
-          <span class="text-neutral-500">{{ timeToRead }} min read</span>
+          <time v-text="createdAt" />
+          <span>•</span>
+          <span>{{ timeToRead }} min read</span>
         </div>
       </div>
     </div>

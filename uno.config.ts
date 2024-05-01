@@ -9,14 +9,21 @@ import {
   transformerVariantGroup,
 } from "unocss";
 
-
 const shortcuts = {
-  "maxp": "p-5 2xl:px-100",
-  "bg-rainbow": "bg-gradient-to-r from-[var(--vp-c-brand-1)] to-[var(--vp-c-brand-next)]",
-  "text-rainbow": "bg-clip-text text-transparent bg-rainbow",
+  "row": "flex flex-row",
+  "col": "flex flex-col",
+  "w-rel": "w-full md:w-screen-md lg:w-screen-lg xl:w-screen-xl",
   "icon-rainbow": "text-[var(--vp-c-brand-1)]",
   "border-rainbow": "border-[var(--vp-c-brand-1)]",
   "ring-rainbow": "ring-[var(--vp-c-brand-1)]",
+  
+  "animate-click": "active:(scale-95 brightness-95) transition-all duration-200",
+
+  "btn-rainbow": "bg-rainbow text-white hover:bg-rainbow-dark",
+  "btn-neutral": "border border-neutral-800 text-neutral-400 p-2 rounded-md",
+  "bg-rainbow": "bg-gradient-to-r from-[var(--vp-c-brand-1)] to-[var(--vp-c-brand-next)]",
+  "text-rainbow": "bg-clip-text text-transparent bg-rainbow",
+
 };
 
 export default defineConfig({
@@ -25,7 +32,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetIcons(),
-    presetTypography(), 
+    presetTypography(),
     presetWebFonts({
       fonts: {
         sans: "Exo 2",
@@ -33,8 +40,5 @@ export default defineConfig({
       },
     }),
   ],
-  transformers: [
-      transformerDirectives(),
-      transformerVariantGroup()
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
 });

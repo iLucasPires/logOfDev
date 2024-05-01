@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/content",
     "@nuxtjs/i18n",
+    "nuxt-content-assets",
   ],
   i18n: {
     customRoutes: "config",
@@ -55,6 +56,18 @@ export default defineNuxtConfig({
     public: {
       imgProfile: "https://avatars.githubusercontent.com/u/68610729?v=4",
       email: process.env.EMAIL,
+    },
+  },
+
+  content: {
+    sources: {
+      github: {
+        prefix: "/blog",
+        driver: "github",
+        repo: "iLucasPires/logOfDev_Content",
+        branch: "main",
+        token: process.env.GITHUB_TOKEN,
+      },
     },
   },
 });

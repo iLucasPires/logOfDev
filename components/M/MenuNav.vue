@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-defineProps<{
-  pages: {
-    name: string;
-    path: string;
-    icon: string;
-  }[];
-}>();
-const localePath = useLocalePath();
+  defineProps<{
+    pages: {
+      name: string;
+      path: string;
+      icon: string;
+    }[];
+  }>();
+  const localePath = useLocalePath();
 </script>
 
 <template>
   <nav class="hidden md:block">
-    <menu class="flex flex-row gap-2">
+    <menu class="row gap-2">
       <NuxtLinkLocale
-        class="flex gap-2 items-center py-1 px-4"
+        class="row gap-2 items-center py-1 px-4"
         v-bind:key="page.name"
         v-bind:to="localePath(page.path)"
         v-for="page in pages"

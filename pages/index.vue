@@ -19,41 +19,26 @@ const handleResume = () => {
 <template>
   <main class="size-full flex flex-col gap-4 items-center justify-center">
     <div class="text-center uppercase">
-      <AText
-        tag="p"
-        size="sm"
-        text="Front-end Developer"
-        weight="light"
-        fontCase="upper"
-        custom="md:tracking-3 tracking-widest"
-      />
-      <AText
-        tag="h1"
-        weight="bold"
-        fontCase="upper"
-        color="rainbow"
-        size="lg"
-        custom="md:text-8xl"
-        text="Lucas Pires"
-      />
+      <p class="tracking-widest md:tracking-3">Frontend Developer</p>
+      <h1 class="text-rainbow uppercase text-6xl md:text-8xl font-black">Lucas Pires</h1>
     </div>
 
     <div class="flex items-center gap-4">
-      <AButton
-        icon="i-carbon-document-pdf"
-        custom="w-42 md:w-72"
-        position="left"
-        :text="t('home.btn_resume')"
+      <button
+        class="btn-neutral w-42 md:w-72 flex gap-2 animate-click"
         v-on:click="handleResume"
-      />
+      >
+        <span class="i-carbon-document-pdf" />
+        <span class="uppercase text-sm" v-text="$t('home.btn_resume')" />
+      </button>
 
-      <AButton
-        icon="i-carbon-email"
-        text="Email"
-        position="left"
-        custom="w-42 md:w-72"
+      <button
+        class="btn-neutral w-42 md:w-72 flex gap-2 animate-click"
         v-on:click="handleContact"
-      />
+      >
+        <span class="i-carbon-email" />
+        <span class="uppercase text-sm">Email</span>
+      </button>
     </div>
   </main>
 </template>
