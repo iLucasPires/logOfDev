@@ -29,9 +29,11 @@
       <div class="flex items-center gap-2 relative">
         <button class="p-2" @click="langMenuIsOpen = !langMenuIsOpen">
           <div class="i-carbon-translate" />
+          <span class="sr-only">change language</span>
         </button>
         <button class="p-2" @click="switchColorMode">
           <div :class="iconTheme" />
+          <span class="sr-only">change theme</span>
         </button>
         <MMenuMobile v-bind:pages="pages" />
         <MMenuLang v-show="langMenuIsOpen" @close="langMenuIsOpen = false" />

@@ -48,7 +48,8 @@
 
 <template>
   <button class="p-2 md:hidden flex" @click="handleClick">
-    <i v-bind:class="menuIsOpen ? 'i-carbon-close' : 'i-carbon-menu'" />
+    <span v-bind:class="menuIsOpen ? 'i-carbon-close' : 'i-carbon-menu'" />
+    <span class="sr-only">menu</span>
   </button>
 
   <span

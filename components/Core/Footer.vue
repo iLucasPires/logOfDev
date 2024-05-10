@@ -32,11 +32,11 @@
         <button
           v-for="social in socialNetworks"
           :key="social.text"
-          :class="social.icon"
-          class="text-xl"
+          class="text-xl flex"
           @click="openLink(social.link)"
         >
-          {{ social.text }}
+          <span :class="social.icon" />
+          <span class="sr-only" v-text="social.text" />
         </button>
       </div>
 
