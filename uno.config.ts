@@ -12,6 +12,7 @@ import {
 const shortcuts = {
   "row": "flex flex-row",
   "col": "flex flex-col",
+  "center": "flex items-center justify-center",
   "w-rel": "w-full md:w-screen-md lg:w-screen-lg xl:w-screen-xl",
   "icon-rainbow": "text-[var(--vp-c-brand-1)]",
   "border-rainbow": "border-[var(--vp-c-brand-1)]",
@@ -19,11 +20,16 @@ const shortcuts = {
   
   "animate-click": "active:(scale-95 brightness-95) transition-all duration-200",
 
-  "btn-rainbow": "bg-rainbow text-white hover:bg-rainbow-dark",
-  "btn-neutral": "border border-neutral-800 text-neutral-400 p-2 rounded-md",
-  "bg-rainbow": "bg-gradient-to-r from-[var(--vp-c-brand-1)] to-[var(--vp-c-brand-next)]",
-  "text-rainbow": "bg-clip-text text-transparent bg-rainbow",
+  "divide-primary": "light:divide-neutral-400 dark:divide-neutral-800 divide-y-1",
+  "border-primary": "light:border-neutral-400 dark:border-neutral-800 border-1",
+  "btn-primary": "p-2 rounded border-primary",
 
+  "bg-primary-20": "light:bg-neutral-100/20 dark:bg-neutral-900/20",
+
+  "bg-primary": "light:bg-neutral-100 dark:bg-neutral-950",
+  "btn-rainbow": "!bg-rainbow hover:bg-rainbow",
+  "bg-rainbow": "bg-gradient-to-r from-[var(--vp-c-brand-1)] to-[var(--vp-c-brand-next)]",
+  "text-rainbow": "bg-clip-text !text-transparent bg-rainbow",
 };
 
 export default defineConfig({

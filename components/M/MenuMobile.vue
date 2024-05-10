@@ -47,7 +47,7 @@
 </script>
 
 <template>
-  <button class="btn-neutral p-2 md:hidden flex" @click="handleClick">
+  <button class="p-2 md:hidden flex" @click="handleClick">
     <i v-bind:class="menuIsOpen ? 'i-carbon-close' : 'i-carbon-menu'" />
   </button>
 
@@ -58,26 +58,26 @@
   />
 
   <nav
-    class="fixed inset-x-0 bottom-0 top-0 z-20 bg-neutral-950 transition-transform duration-300 rounded-t-xl"
+    class="fixed inset-x-0 bottom-0 top-0 z-20 bg-primary transition-transform duration-300 rounded-t-xl"
     v-bind:style="{
       transform: menuIsOpen ? `translateY(${sizeMenu}%)` : 'translateY(100%)',
     }"
   >
     <button
-      class="w-full h-4 flex items-center justify-center p-4"
+      class="w-full h-4 center p-4"
       @touchstart="buttonDown = true"
       @touchend="handleTouchEnd"
       @click="handleClick"
       @touchmove="handleTouch"
     >
       <div
-        class="rounded bg-neutral-700 active:bg-neutral-600 hover:bg-neutral-600 w-20 h-2"
+        class="rounded bg-neutral-5/50 active:bg-neutral-5 hover:bg-neutral-5 w-20 h-2"
       />
     </button>
 
     <menu class="space-y-2 p-4">
       <button
-        class="btn-neutral animate-click block w-full"
+        class="btn-primary animate-click block w-full"
         v-for="page in pages"
         v-bind:key="page.name"
         @click="navigateTo(page.path)"

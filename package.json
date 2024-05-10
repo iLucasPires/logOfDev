@@ -13,13 +13,13 @@
     "@iconify/json": "^2.2.196",
     "@nuxt/content": "^2.12.1",
     "@nuxt/image": "^1.4.0",
+    "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/i18n": "^8.2.0",
     "@unocss/nuxt": "^0.58.8",
     "@unocss/preset-uno": "^0.58.8",
     "@unocss/reset": "^0.58.8",
     "nuxt": "^3.11.1",
     "nuxt-content-assets": "^1.4.4",
-    "unstorage": "^1.10.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }

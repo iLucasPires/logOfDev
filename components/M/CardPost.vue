@@ -10,17 +10,9 @@
 
 <template>
   <div
-    class="size-full rounded-lg p-4 border border-neutral-9 group hover:(border-rainbow bg-neutral-9/60)"
+    class="size-full rounded-lg p-4 border-primary group hover:(border-rainbow bg-primary-20)"
   >
-    <NuxtImg
-      v-if="cover"
-      class="rounded-lg h-75 object-cover w-full saturate-0 group-hover:saturate-100 transition-all"
-      :src="cover"
-      :alt="title"
-      width="400"
-      height="200"
-    />
-    <div class="space-y-2 mt-4">
+    <div class="space-y-2">
       <h4 class="text-xl font-bold" v-text="title" />
       <p v-text="description" />
 

@@ -1,14 +1,16 @@
 <script lang="ts" setup>
   const { data: post } = await useAsyncData("post", () =>
-    queryContent(useRoute().fullPath).findOne()
+    queryContent(useRoute().params.slug[0])
+      .where({ lang: useI18n().locale.value, status: "published" })
+      .findOne()
   );
-
-  if (!post.value) {
-    throw createError({
-      statusCode: 404,
-      message: "Post not found",
-    });
-  }
+  
+  // if (!post.value) {
+  //   throw createError({
+  //     statusCode: 404,
+  //     message: "Post not found",
+  //   });
+  // }
 </script>
 
 <template>

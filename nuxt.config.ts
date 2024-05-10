@@ -15,7 +15,19 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/i18n",
     "nuxt-content-assets",
+    "@nuxtjs/color-mode",
   ],
+  extends: ["node_modules/nuxt-content-assets/cache"],
+  contentAssets: {
+    // inject image size hints into the rendered html
+    imageSize: "style",
+
+    // treat these extensions as content
+    contentExtensions: "mdx? csv ya?ml json",
+
+    // output debug messages
+    debug: false,
+  },
   i18n: {
     customRoutes: "config",
     strategy: "prefix_and_default",
@@ -51,7 +63,16 @@ export default defineNuxtConfig({
       },
     },
   },
-
+  colorMode: {
+    preference: 'dark', 
+    fallback: 'dark',
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'nuxt-color-mode'
+  },
   runtimeConfig: {
     public: {
       imgProfile: "https://avatars.githubusercontent.com/u/68610729?v=4",
@@ -62,10 +83,10 @@ export default defineNuxtConfig({
   content: {
     sources: {
       github: {
-        prefix: "/blog",
         driver: "github",
         repo: "iLucasPires/logOfDev_Content",
         branch: "main",
+        dir: "blog",
         token: process.env.GITHUB_TOKEN,
       },
     },

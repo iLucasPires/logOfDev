@@ -1,8 +1,48 @@
+<script setup lang="ts">
+  const socialNetworks = [
+    {
+      text: "GitHub",
+      icon: "i-carbon-logo-github",
+      link: "https://github.com/iLucasPires",
+    },
+    {
+      text: "LinkedIn",
+      icon: "i-carbon-logo-linkedin",
+      link: "https://linkedin.com/in/iLucasPires",
+    },
+    {
+      text: "Twitter",
+      icon: "i-carbon-logo-twitter",
+      link: "https://twitter.com/lpires_n",
+    },
+  ];
+
+  const currentYear = new Date().getFullYear();
+  function openLink(link: string) {
+    window.open(link, "_blank");
+  }
+</script>
+
 <template>
-  <footer class="p-5 w-full border-t-1 border-neutral-800/30">
-    <div class="col w-rel mx-a md:row items-center gap-4 text-neutral-500">
+  <footer class="p-5 w-full">
+    <div
+      class="col w-rel mx-a md:(row justify-between) items-center gap-4 text-neutral-500"
+    >
+      <div class="row gap-4">
+        <button
+          v-for="social in socialNetworks"
+          :key="social.text"
+          :class="social.icon"
+          class="text-xl"
+          @click="openLink(social.link)"
+        >
+          {{ social.text }}
+        </button>
+      </div>
+
       <p class="text-center">
-        &copy;{{ new Date().getFullYear() }} - {{ $t("footer.corpyright") }}
+        &copy;{{ currentYear }} -
+        <span v-text="$t('footer.corpyright')" />
       </p>
     </div>
   </footer>

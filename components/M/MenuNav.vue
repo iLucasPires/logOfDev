@@ -12,15 +12,16 @@
 <template>
   <nav class="hidden md:block">
     <menu class="row gap-2">
-      <NuxtLinkLocale
-        class="row gap-2 items-center py-1 px-4"
-        v-bind:key="page.name"
-        v-bind:to="localePath(page.path)"
-        v-for="page in pages"
-      >
-        <i v-bind:class="page.icon" />
-        <span class="uppercase text-sm" v-text="page.name" />
-      </NuxtLinkLocale>
+      <li v-for="page in pages">
+        <NuxtLinkLocale
+          class="row gap-2 items-center py-1 px-4"
+          v-bind:key="page.name"
+          v-bind:to="localePath(page.path)"
+        >
+          <i v-bind:class="page.icon" />
+          <span class="uppercase text-sm" v-text="page.name" />
+        </NuxtLinkLocale>
+      </li>
     </menu>
   </nav>
 </template>

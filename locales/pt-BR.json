@@ -20,7 +20,7 @@
 
   "footer": {
     "madeBy": "Desenvolvido por",
-    "corpyright": "My Portfolio. Todos os direitos reservados."
+    "corpyright": "Todos os direitos reservados."
   },
 
   "home": {
@@ -32,20 +32,20 @@
   "about": {
     "title": "Sobre mim",
     "bio": {
-      "title": "Minha Bio",
+      "title": "Minha Biografia",
       "p1": {
-        "title": "Quem sou eu?",
-        "text": "Eu sou um desenvolvedor web, com foco em desenvolvimento front-end. Atualmente estou trabalhando com Nuxt e Tailwind, e também estou estudando Next.js. Também estou estudando desenvolvimento back-end com Django e FastAPI."
+        "title": "Quem Sou Eu?",
+        "text": "Sou um desenvolvedor certificado em Human Code pela 42 São Paulo, apaixonado por aprender e compartilhar conhecimento no campo do desenvolvimento."
       },
       "p2": {
-        "title": "O que estou procurando?",
-        "text": "Estou procurando oportunidades para trabalhar com desenvolvimento web, com foco em desenvolvimento front-end. Também estou procurando oportunidades para trabalhar com Python e C/C++."
+        "title": "O Que Faço Atualmente?",
+        "text": "Atualmente, estou trabalhando como desenvolvedor júnior na empresa Gigage, onde tenho a oportunidade de crescer e contribuir em projetos desafiadores."
       },
       "p3": {
-        "title": "O que estou estudando?",
-        "text": "Estou estudando desenvolvimento web com Nuxt e Tailwind, e também estou estudando Next.js. Também estou estudando desenvolvimento back-end com Django e FastAPI. Também estou estudando C/C++ e Python."
+        "title": "Meus Estudos e Interesses",
+        "text": "Estou focado em aprimorar minhas habilidades em desenvolvimento web, dedicando tempo ao estudo do front-end e back-end para me tornar um profissional mais completo e eficaz."
       }
-    },
+    },    
     "skills": {
       "title": "Habilidades",
       "frontend": {

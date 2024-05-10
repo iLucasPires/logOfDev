@@ -7,27 +7,42 @@
     { name: t("nav.about"), path: "about", icon: "i-carbon-user" },
     { name: t("nav.blog"), path: "blog", icon: "i-carbon-blog" },
   ]);
+
+  const iconTheme = computed(() =>
+    colorMode.value === "dark" ? "i-carbon-moon" : "i-carbon-sun"
+  );
+
+  const colorMode = useColorMode();
+
+  const switchColorMode = () => {
+    colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+  };
 </script>
 
 <template>
-  <header
-    class="border-b-1 border-neutral-800/30 p-5 w-rel"
-  >
+  <header class="mb-10 p-5 w-rel">
     <div class="items-center flex justify-between">
-      <NuxtLinkLocale class="flex gap-4" to="/">
-        <NuxtImg src="/logo.svg" alt="Logo" width="34" height="34" />
+      <NuxtLinkLocale class="flex gap-2" to="/">
+        <span class="text-lg font-medium">Log of dev</span>
       </NuxtLinkLocale>
       <MMenuNav v-bind:pages="pages" />
       <div class="flex items-center gap-2 relative">
-        <button
-          class="btn-neutral p-2 flex"
-          @click="langMenuIsOpen = !langMenuIsOpen"
-        >
-          <span class="i-carbon-translate" />
+        <button class="p-2" @click="langMenuIsOpen = !langMenuIsOpen">
+          <div class="i-carbon-translate" />
         </button>
-        <MMenuLang v-show="langMenuIsOpen" @close="langMenuIsOpen = false" />
+        <button class="p-2" @click="switchColorMode">
+          <div :class="iconTheme" />
+        </button>
         <MMenuMobile v-bind:pages="pages" />
+        <MMenuLang v-show="langMenuIsOpen" @close="langMenuIsOpen = false" />
       </div>
     </div>
   </header>
+  <Teleport to="body">
+    <span
+      class="fixed w-full h-screen z-1 inset-0"
+      @click="langMenuIsOpen = false"
+      v-show="langMenuIsOpen"
+    />
+  </Teleport>
 </template>

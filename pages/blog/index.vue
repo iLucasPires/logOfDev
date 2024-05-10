@@ -15,11 +15,13 @@
   } = useI18n();
 
   const { data } = await useAsyncData("blogPosts", () =>
-    queryContent("blog").where({ lang: localCode, status: "published" }).find()
+    queryContent("").where({ lang: localCode, status: "published" }).find()
   );
+
   const blogPosts = data.value as iProps[] | [];
   const lastPosts = blogPosts?.slice(0, 2) as iProps[] | [];
   const otherPosts = blogPosts?.slice(2) as iProps[] | [];
+  const token = process.env.GITHUB_TOKEN;
 </script>
 
 <template>
@@ -29,16 +31,16 @@
 
     <template v-if="blogPosts.length != 0">
       <div class="space-y-4">
-        <h3 class="font-bold" v-text="$t('blog.lastPosts')" />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h3 class="font-bold" v-text="$t('blog.latestPosts')" />
+        <div class="col gap-4">
           <NuxtLink
-            :key="post._path"
-            :to="post._path"
-            v-for="post in lastPosts"
+          :key="post._path"
+          :to="'/blog' + post._path"
+          v-for="post in lastPosts"
           >
             <MCardPost
               :title="post.title"
-              :cover="`${useRequestURL().origin}${post.cover}`"
+              :cover="post.cover"
               :description="post.description"
               :createdAt="post.createdAt"
               :timeToRead="calculateTimeToRead(post.description)"

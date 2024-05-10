@@ -67,13 +67,13 @@
             <p class="text-neutral-500" v-html="item.text" />
           </li>
         </ul>
-        <div class="size-full">
+        <div class="size-full relative -top-12 left-5 hidden lg:block">
           <NuxtImg
-            src="https://github.com/ilucaspires.png"
+            src="https://media.licdn.com/dms/image/D4D03AQFisb1NlQRllg/profile-displayphoto-shrink_800_800/0/1715300067160?e=1720656000&v=beta&t=D3GpOXrEiXWewvgaEucADL5bl2stQksaD18QSSY_cBk"
+            class="rounded  m-auto saturate-1"
             alt="Lucas Pires"
             width="400"
             height="400"
-            class="rounded hidden md:block m-auto"
           />
         </div>
       </div>

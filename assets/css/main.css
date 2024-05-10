@@ -5,7 +5,9 @@
 }
 
 body {
-  @apply bg-neutral-950 min-h-lvh h-lvh;
+  @apply min-h-lvh h-lvh;
+  @apply "light:bg-neutral-200 bg-neutral-950";
+
 }
 
 div#__nuxt {
@@ -18,27 +20,32 @@ div#__nuxt {
 
 h1,
 h1 > a {
-  @apply "text-neutral-200 md:text-4xl text-3xl";
+  @apply " md:text-4xl text-3xl";
+  @apply "text-neutral-200 light:text-neutral-800";
 }
 
 h2,
 h2 > a {
-  @apply "text-neutral-300 md:text-3xl text-2xl";
+  @apply " md:text-3xl text-2xl";
+  @apply "text-neutral-300 light:text-neutral-700";
 }
 
 h3,
 h3 > a {
-  @apply "text-neutral-400 md:text-2xl text-xl";
+  @apply " md:text-2xl text-xl";
+  @apply "text-neutral-400 light:text-neutral-600";
 }
 
 h4,
 h4 > a {
-  @apply "text-neutral-500 md:text-xl text-lg";
+  @apply "md:text-xl text-lg";
+  @apply "text-neutral-500 light:text-neutral-500";
 }
 
 p,
 a,
 li,
 div {
-  @apply "text-neutral-500  text-base";
+  @apply "text-base";
+  @apply "text-neutral-500 light:text-neutral-500";
 }

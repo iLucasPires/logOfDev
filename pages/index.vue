@@ -23,9 +23,9 @@ const handleResume = () => {
       <h1 class="text-rainbow uppercase text-6xl md:text-8xl font-black">Lucas Pires</h1>
     </div>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2">
       <button
-        class="btn-neutral w-42 md:w-72 flex gap-2 animate-click"
+        class="btn-primary w-42 md:w-72 row items-center gap-2 animate-click"
         v-on:click="handleResume"
       >
         <span class="i-carbon-document-pdf" />
@@ -33,7 +33,7 @@ const handleResume = () => {
       </button>
 
       <button
-        class="btn-neutral w-42 md:w-72 flex gap-2 animate-click"
+        class="btn-primary w-42 md:w-72 row items-center gap-2 animate-click"
         v-on:click="handleContact"
       >
         <span class="i-carbon-email" />
