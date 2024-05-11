@@ -1,6 +1,8 @@
 <script setup lang="ts">
   const { t } = useI18n();
-
+  definePageMeta({
+    title: "about.title",
+  });
   const aboutMeList = [
     {
       title: t("about.bio.p1.title"),

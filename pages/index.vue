@@ -1,26 +1,32 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
+  import { useI18n } from "vue-i18n";
 
-const { t } = useI18n();
+  const { t } = useI18n();
 
-const handleContact = () => {
-  const email = useRuntimeConfig().public.email;
-  const msg = `mailto:${email}?subject=Contact&body=${t("home.email_body")}`;
+  definePageMeta({
+    title: "home.title",
+  });
 
-  navigator.clipboard.writeText(email);
-  confirm(t("home.email_confirm")) && window.open(msg);
-};
+  const handleContact = () => {
+    const email = useRuntimeConfig().public.email;
+    const msg = `mailto:${email}?subject=Contact&body=${t("home.email_body")}`;
 
-const handleResume = () => {
-  window.open("/pdf/resume.pdf");
-};
+    navigator.clipboard.writeText(email);
+    confirm(t("home.email_confirm")) && window.open(msg);
+  };
+
+  const handleResume = () => {
+    window.open("/pdf/resume.pdf");
+  };
 </script>
 
 <template>
   <main class="size-full flex flex-col gap-4 items-center justify-center">
     <div class="text-center uppercase">
       <p class="tracking-widest md:tracking-3">Frontend Developer</p>
-      <h1 class="text-rainbow uppercase text-6xl md:text-8xl font-black">Lucas Pires</h1>
+      <h1 class="text-rainbow uppercase text-6xl md:text-8xl font-black">
+        Lucas Pires
+      </h1>
     </div>
 
     <div class="flex items-center gap-2">

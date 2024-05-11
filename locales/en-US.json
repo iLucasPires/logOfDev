@@ -1,4 +1,5 @@
 {
+  "TBD" : "TBD",
   "nav": {
     "home": "home",
     "about": "about",
@@ -24,6 +25,7 @@
   },
 
   "home": {
+    "title": "Hello, I'm Lucas",
     "btn_resume": "Resume",
     "email_confirm": "My email was copied to your clipboard. \nDo you want to open your email client to send me a message?",
     "email_body": "Hey Lucas! Let's exchange some ideas about..."
@@ -63,6 +65,7 @@
   },
 
   "blog": {
+    "title": "Log of dev - my personal blog",
     "latestPosts": "Latest Posts",
     "otherPosts": "Other Posts",
 

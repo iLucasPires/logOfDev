@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+    },
+  },
   css: [
     "@unocss/reset/tailwind.css",
     "~/assets/css/rainbow.css",
@@ -16,23 +22,28 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "nuxt-content-assets",
     "@nuxtjs/color-mode",
+    "@nuxtjs/robots",
   ],
-  extends: ["node_modules/nuxt-content-assets/cache"],
+  robots: {
+    UserAgent: "*",
+    Disallow: "",
+  },
   contentAssets: {
-    // inject image size hints into the rendered html
     imageSize: "style",
-
-    // treat these extensions as content
     contentExtensions: "mdx? csv ya?ml json",
-
-    // output debug messages
     debug: false,
   },
   i18n: {
     customRoutes: "config",
+    baseUrl: "https://www.logofdev.software/",
     strategy: "prefix_and_default",
     langDir: "locales/",
     defaultLocale: "en",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
+    },
     locales: [
       {
         code: "en",
@@ -64,14 +75,14 @@ export default defineNuxtConfig({
     },
   },
   colorMode: {
-    preference: 'dark', 
-    fallback: 'dark',
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-    storageKey: 'nuxt-color-mode'
+    preference: "dark",
+    fallback: "dark",
+    hid: "nuxt-color-mode-script",
+    globalName: "__NUXT_COLOR_MODE__",
+    componentName: "ColorScheme",
+    classPrefix: "",
+    classSuffix: "",
+    storageKey: "nuxt-color-mode",
   },
   runtimeConfig: {
     public: {

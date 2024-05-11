@@ -24,6 +24,7 @@
   },
 
   "home": {
+    "title": "Olá, eu sou Lucas!",
     "btn_resume": "Currículo",
     "email_confirm": "E-mail copiado para a área de transferência, \nGostaria de continuar no seu cliente de e-mail?",
     "email_body": "Ei lucas! Vamos trocar uma ideia sobre..."
@@ -45,7 +46,7 @@
         "title": "Meus Estudos e Interesses",
         "text": "Estou focado em aprimorar minhas habilidades em desenvolvimento web, dedicando tempo ao estudo do front-end e back-end para me tornar um profissional mais completo e eficaz."
       }
-    },    
+    },
     "skills": {
       "title": "Habilidades",
       "frontend": {
@@ -63,9 +64,10 @@
     }
   },
   "blog": {
+    "title": "Log of dev - meu blog pessoal",
     "latestPosts": "Últimos Posts",
     "otherPosts": "Outros Posts",
-    
+
     "description": "Log do dev é um projeto que comecei para compartilhar experiências e conhecimentos no mundo do desenvolvimento. Espero que você goste e que seja útil para você.",
 
     "notFound": {

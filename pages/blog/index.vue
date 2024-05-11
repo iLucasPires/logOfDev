@@ -1,4 +1,8 @@
 <script setup lang="ts">
+  definePageMeta({
+    title: "blog.title",
+  });
+
   interface iProps {
     _path: string;
     title: string;

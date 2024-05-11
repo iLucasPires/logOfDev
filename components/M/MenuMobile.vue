@@ -71,9 +71,10 @@
       @click="handleClick"
       @touchmove="handleTouch"
     >
-      <div
+      <span
         class="rounded bg-neutral-5/50 active:bg-neutral-5 hover:bg-neutral-5 w-20 h-2"
       />
+      <span class="sr-only">close menu</span>
     </button>
 
     <menu class="space-y-2 p-4">
