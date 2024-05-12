@@ -4,27 +4,8 @@
     width="1080"
     height="1080"
     viewBox="0 0 1080 1080"
-    version="1.1"
-    id="svg1"
-    xml:space="preserve"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg"
   >
-    <sodipodi:namedview
-      id="namedview1"
-      pagecolor="#171717"
-      bordercolor="#999999"
-      borderopacity="1"
-      inkscape:showpageshadow="2"
-      inkscape:pageopacity="0"
-      inkscape:pagecheckerboard="0"
-      inkscape:deskcolor="#d1d1d1"
-      inkscape:document-units="px"
-    />
-    <defs id="defs1" />
-    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+    <g id="layer1">
       <g
         id="layer1-6"
         style="display: inline; stroke-opacity: 1"

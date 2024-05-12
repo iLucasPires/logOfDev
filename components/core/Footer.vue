@@ -5,8 +5,8 @@
 
   const madeby = computed(() =>
     t("footer.credits", {
-      nuxt: `<a class="font-bold" href="https://nuxt.com" target="_blank">Nuxt.js</a>`,
-      unocss: `<a class="font-bold" href="https://unocss.dev" target="_blank">Uno.css</a>`,
+      nuxt: `<a class="text-neutral-300 light:text-neutral-700" href="https://nuxt.com" target="_blank">Nuxt.js</a>`,
+      unocss: `<a class="text-neutral-300 light:text-neutral-700" href="https://unocss.dev" target="_blank">Uno.css</a>`,
     })
   );
 </script>
@@ -16,7 +16,7 @@
     <span v-html="madeby" />
     <div>
       <NuxtLink
-        class="font-bold"
+        class="text-neutral-300 light:text-neutral-700"
         target="_blank"
         to="https://creativecommons.org/licenses/by/4.0/"
       >
