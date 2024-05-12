@@ -6,16 +6,14 @@
   const icon = ref("");
 
   onMounted(() => {
-    icon.value = colorMode.preference === "dark"
-      ? ("i-carbon-moon")
-      : ("i-carbon-sun");
+    icon.value =
+      colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
   });
 
   const toggleTheme = () => {
     colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
-    icon.value = colorMode.preference === "dark"
-      ? ("i-carbon-moon")
-      : ("i-carbon-sun");
+    icon.value =
+      colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
   };
 
   const pages = computed(() => [
@@ -29,9 +27,12 @@
   <header class="mb-10 p-5 w-rel">
     <div class="items-center flex justify-between">
       <NuxtLinkLocale class="flex gap-2" to="/">
-        <span class="text-lg font-medium">Log of dev</span>
+        <NuxtIsland name="Logo" />
+        <span class="text-lg font-medium hidden md:inline">Lucas Pires</span>
       </NuxtLinkLocale>
+
       <MMenuNav v-bind:pages="pages" />
+
       <div class="flex items-center gap-2 relative">
         <button class="p-2" @click="langMenuIsOpen = !langMenuIsOpen">
           <div class="i-carbon-translate" />

@@ -1,5 +1,5 @@
 {
-  "TBD" : "TBD",
+  "TBD": "TBD",
   "nav": {
     "home": "home",
     "about": "about",
@@ -7,7 +7,7 @@
     "blog": "blog",
     "projects": "projects"
   },
-  
+
   "404": {
     "title": "Page not found",
     "text": "Back to home"
@@ -20,7 +20,7 @@
   },
 
   "footer": {
-    "madeBy": "Made by",
+    "credits": "Made with {nuxt} and {unocss} by",
     "corpyright": "All rights reserved."
   },
 
@@ -32,21 +32,14 @@
   },
   "about": {
     "title": "About me",
+    "description": "A brief overview of my life and career.",
+
     "bio": {
-      "title": "My bio",
-      "p1": {
-        "title": "Who Am I?",
-        "text": "I'm a developer certified in Human Code by 42 São Paulo, passionate about learning and sharing knowledge in the field of development."
-      },
-      "p2": {
-        "title": "What I'm Currently Doing?",
-        "text": "Currently, I'm working as a junior developer at Gigage, where I have the opportunity to grow and contribute to challenging projects."
-      },
-      "p3": {
-        "title": "My Studies and Interests",
-        "text": "I'm focused on enhancing my skills in web development, dedicating time to studying both front-end and back-end to become a more well-rounded and effective professional."
-      }
-    },    
+      "title": "Hey! I'm Lucas",
+      "p1": "I'm a developer certified in Human Code by 42 São Paulo, passionate about learning and sharing knowledge in the field of development.",
+      "p2": "Currently, I'm working as a junior developer at Gigage, where I have the opportunity to grow and contribute to challenging projects.",
+      "p3": "I'm focused on enhancing my skills in web development, dedicating time to studying both front-end and back-end to become a more well-rounded and effective professional."
+    },
     "skills": {
       "title": "Skills",
       "frontend": {
@@ -65,7 +58,7 @@
   },
 
   "blog": {
-    "title": "Log of dev - my personal blog",
+    "title": "Log of dev - blog",
     "latestPosts": "Latest Posts",
     "otherPosts": "Other Posts",
 

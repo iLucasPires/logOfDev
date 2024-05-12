@@ -3,19 +3,28 @@
   definePageMeta({
     title: "about.title",
   });
-  const aboutMeList = [
+
+  const socialNetworks = [
     {
-      title: t("about.bio.p1.title"),
-      text: t("about.bio.p1.text"),
+      text: "GitHub",
+      icon: "i-carbon-logo-github",
+      link: "https://github.com/iLucasPires",
     },
     {
-      title: t("about.bio.p2.title"),
-      text: t("about.bio.p2.text"),
+      text: "LinkedIn",
+      icon: "i-carbon-logo-linkedin",
+      link: "https://linkedin.com/in/iLucasPires",
     },
     {
-      title: t("about.bio.p3.title"),
-      text: t("about.bio.p3.text"),
+      text: "Twitter",
+      icon: "i-carbon-logo-twitter",
+      link: "https://twitter.com/lpires_n",
     },
+    {
+      text: "Linktree",
+      icon: "i-carbon-link",
+      link: "https://linktr.ee/lpiresn",
+    }
   ];
 
   const skillMeList = [
@@ -58,32 +67,49 @@
 <template>
   <NuxtLayout name="section">
     <template #title>{{ $t("about.title") }}</template>
-    <template #description>{{ $t("about.description") }}</template>
+    <template #desc>{{ $t("about.description") }}</template>
 
     <div class="space-y-5">
-      <h2 class="uppercase" v-text="$t('about.bio.title')" />
-      <div class="row">
-        <ul class="space-y-4">
-          <li :key="item.title" v-for="item in aboutMeList">
-            <h3 class="text-bold" v-text="item.title" />
-            <p class="text-neutral-500" v-html="item.text" />
-          </li>
-        </ul>
-        <div class="size-full relative -top-12 left-5 hidden lg:block">
+      <div class="row gap-8">
+        <div class="hidden w-1/2 lg:block">
           <NuxtImg
             src="https://media.licdn.com/dms/image/D4D03AQFisb1NlQRllg/profile-displayphoto-shrink_800_800/0/1715300067160?e=1720656000&v=beta&t=D3GpOXrEiXWewvgaEucADL5bl2stQksaD18QSSY_cBk"
-            class="rounded  m-auto saturate-1"
+            class="rounded size-full m-auto saturate-1 object-cover"
             alt="Lucas Pires"
             width="400"
             height="400"
           />
+        </div>
+        <div class="w-full space-y-4">
+          <h2 class="uppercase" v-text="$t('about.bio.title')" />
+          <div class="space-y-4 md:w-3/4">
+            <div class="space-y-4">
+              <p v-text="$t('about.bio.p1')" />
+              <p v-text="$t('about.bio.p2')" />
+              <p v-text="$t('about.bio.p3')" />
+            </div>
+            <div class="grid md:grid-cols-3 gap-2">
+              <NuxtLink
+                :to="item.link"
+                :key="item.text"
+                target="_blank"
+                class="btn-primary row w-full items-center gap-2 animate-click"
+                v-for="item in socialNetworks"
+              >
+                <span :class="item.icon" />
+                <span v-text="item.text" />
+
+                <span class="i-tabler:external-link ml-a" />
+              </NuxtLink>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="space-y-5">
       <h2 class="uppercase" v-text="$t('about.skills.title')" />
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div v-for="item in skillMeList" :key="item.title">
           <MCardAbout
             :title="item.title"

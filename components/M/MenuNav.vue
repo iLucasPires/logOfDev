@@ -18,7 +18,7 @@
           v-bind:key="page.name"
           v-bind:to="localePath(page.path)"
         >
-          <i v-bind:class="page.icon" />
+          <span v-bind:class="page.icon" />
           <span class="uppercase text-sm" v-text="page.name" />
         </NuxtLinkLocale>
       </li>
