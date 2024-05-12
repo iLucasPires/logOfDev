@@ -20,7 +20,7 @@
   },
 
   "footer": {
-    "credits": "Made with {nuxt} and {unocss} by",
+    "credits": "Made with {nuxt} and {unocss}",
     "corpyright": "All rights reserved."
   },
 

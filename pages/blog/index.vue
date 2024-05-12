@@ -35,7 +35,7 @@
 
     <template v-if="blogPosts.length != 0">
       <div class="space-y-4">
-        <h3 class="font-bold" v-text="$t('blog.latestPosts')" />
+        <h2 class="font-bold" v-text="$t('blog.latestPosts')" />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <NuxtLink
             :key="post._path"

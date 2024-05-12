@@ -36,6 +36,7 @@
       <div class="flex items-center gap-2 relative">
         <button class="p-2" @click="langMenuIsOpen = !langMenuIsOpen">
           <div class="i-carbon-translate" />
+   
           <span class="sr-only">change language</span>
         </button>
         <button class="p-2" @click="toggleTheme">

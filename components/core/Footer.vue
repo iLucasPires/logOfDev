@@ -12,14 +12,14 @@
 </script>
 
 <template>
-  <footer class="p-5 w-rel text-center row justify-between">
-    <div class="row gap-1">
-      <span v-html="madeby" />
-      <NuxtLinkLocale class="font-bold" to="about">Lucas Pires</NuxtLinkLocale>
-    </div>
-
+  <footer class="p-5 w-rel col items-center md:(row justify-between)">
+    <span v-html="madeby" />
     <div>
-      <NuxtLink to="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+      <NuxtLink
+        class="font-bold"
+        target="_blank"
+        to="https://creativecommons.org/licenses/by/4.0/"
+      >
         CC BY 4.0
       </NuxtLink>
       © {{ currentYear }} Lucas Pires
