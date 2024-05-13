@@ -9,16 +9,14 @@
 </script>
 
 <template>
-  <div
-    class="flex justify-between items-start p-4 border-t border-primary hover:(bg-neutral-900/60)"
-  >
+  <div class="flex justify-between items-start p-4 border-t border-primary hover:(bg-neutral-900/60)">
     <div>
       <div class="mb-4">
         <h3 class="text-xl font-semibold" v-text="title" />
-        <p v-text="description" class="" />
+        <p v-text="description" />
       </div>
       <p class="">{{ timeToRead }} min read</p>
     </div>
-    <p v-text="createdAt" class="" />
+    <p v-text="createdAt" />
   </div>
 </template>

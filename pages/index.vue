@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <main class="size-full flex flex-col gap-4 items-center justify-center">
+  <main class="size-full flex-col gap-4 center">
     <div class="text-center uppercase">
       <p class="tracking-widest md:tracking-3">Frontend Developer</p>
       <h1 class="text-rainbow uppercase text-6xl md:text-8xl font-black">
@@ -29,18 +29,18 @@
       </h1>
     </div>
 
-    <div class="flex items-center gap-2">
+    <div class="center gap-2">
       <button
-        class="btn-primary w-42 md:w-72 row items-center gap-2 animate-click"
-        v-on:click="handleResume"
+        class="btn-primary w-42 md:w-72 animate-click"
+        @click="handleResume"
       >
         <span class="i-carbon-document-pdf" />
         <span class="uppercase text-sm" v-text="$t('home.btn_resume')" />
       </button>
 
       <button
-        class="btn-primary w-42 md:w-72 row items-center gap-2 animate-click"
-        v-on:click="handleContact"
+        class="btn-primary w-42 md:w-72 animate-click"
+        @click="handleContact"
       >
         <span class="i-carbon-email" />
         <span class="uppercase text-sm">Email</span>

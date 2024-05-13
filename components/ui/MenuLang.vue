@@ -23,15 +23,17 @@
 <template>
   <div class="absolute top-10 rounded border-primary p-1 z-2">
     <ul class="size-full divide-primary">
-      <li v-for="locale in $i18n.availableLocales" v-bind:key="locale">
-        <button
-          v-on:click="changeLocale(locale)"
-          class="flex gap-2 items-center py-1 px-4 hover:bg-primary-20"
-        >
-          <span v-text="getEmoji(locale)" />
-          <span class="uppercase text-sm" v-text="locale" />
-        </button>
-      </li>
+      <template v-for="locale in $i18n.availableLocales" v-bind:key="locale">
+        <li>
+          <button
+            @click="changeLocale(locale)"
+            class="flex gap-2 items-center py-1 px-4 hover:bg-primary-20"
+          >
+            <span v-text="getEmoji(locale)" />
+            <span class="uppercase text-sm" v-text="locale" />
+          </button>
+        </li>
+      </template>
     </ul>
   </div>
 </template>

@@ -41,12 +41,12 @@
             :to="'/blog/' + post._dir"
             v-for="post in lastPosts"
           >
-            <MCardPost
+            <UiCardPost
               :title="post.title"
               :cover="post.cover"
               :description="post.description"
               :createdAt="post.createdAt"
-              :tags="['tag1', 'tag2']"
+              :tags="post.tags"
               :timeToRead="calculateTimeToRead(post.description)"
             />
           </NuxtLinkLocale>
@@ -60,7 +60,7 @@
             :to="'/blog/' + post._dir"
             v-for="post in otherPosts"
           >
-            <MCardPostCompact
+            <UiCardPostCompact
               :key="post._dir"
               :title="post.title"
               :cover="post.cover"

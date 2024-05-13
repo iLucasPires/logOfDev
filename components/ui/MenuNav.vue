@@ -6,7 +6,6 @@
       icon: string;
     }[];
   }>();
-  const localePath = useLocalePath();
 </script>
 
 <template>
@@ -15,10 +14,11 @@
       <li v-for="page in pages">
         <NuxtLinkLocale
           class="row gap-2 items-center py-1 px-4"
-          v-bind:key="page.name"
-          v-bind:to="localePath(page.path)"
+          :key="page.name"
+          :to="page.path"
+          :aria-label="`go to ${page.name}`"
         >
-          <span v-bind:class="page.icon" />
+          <span :class="page.icon" />
           <span class="uppercase text-sm" v-text="page.name" />
         </NuxtLinkLocale>
       </li>

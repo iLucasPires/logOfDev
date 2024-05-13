@@ -13,12 +13,12 @@
   const buttonDown = ref(false);
   const sizeMenu = ref(50);
 
-  const handleClick = () => {
+  function handleClick() {
     menuIsOpen.value = !menuIsOpen.value;
     document.body.style.overflow = menuIsOpen.value ? "hidden" : "auto";
-  };
+  }
 
-  const handleTouch = (event: TouchEvent) => {
+  function handleTouch(event: TouchEvent) {
     if (buttonDown.value) {
       const value = (event.touches[0].clientY / window.innerHeight) * 100;
       sizeMenu.value = Math.max(
@@ -26,29 +26,29 @@
         Math.min(MAX_SIZE, Math.round(value))
       );
     }
-  };
+  }
 
-  const handleTouchEnd = (event: TouchEvent) => {
+  function handleTouchEnd() {
     if (sizeMenu.value >= MAX_SIZE || sizeMenu.value <= MIN_SIZE) {
       menuIsOpen.value = false;
       document.body.style.overflow = "auto";
     }
     sizeMenu.value = 50;
-  };
+  }
 
-  const navigateTo = (path: string) => {
-    const localePath = useLocalePath();
+  function navigateTo(path: string) {
     const router = useRouter();
+    const localePath = useLocalePath();
 
     document.body.style.overflow = "auto";
     router.push(localePath(path));
     menuIsOpen.value = false;
-  };
+  }
 </script>
 
 <template>
   <button class="p-2 md:hidden flex" @click="handleClick">
-    <span v-bind:class="menuIsOpen ? 'i-carbon-close' : 'i-carbon-menu'" />
+    <span :class="menuIsOpen ? 'i-carbon-close' : 'i-carbon-menu'" />
     <span class="sr-only">menu</span>
   </button>
 
@@ -60,7 +60,7 @@
 
   <nav
     class="fixed inset-x-0 bottom-0 top-0 z-20 bg-primary transition-transform duration-300 rounded-t-xl"
-    v-bind:style="{
+    :style="{
       transform: menuIsOpen ? `translateY(${sizeMenu}%)` : 'translateY(100%)',
     }"
   >
@@ -68,8 +68,8 @@
       class="w-full h-4 center p-4"
       @touchstart="buttonDown = true"
       @touchend="handleTouchEnd"
-      @click="handleClick"
       @touchmove="handleTouch"
+      @click="handleClick"
     >
       <span
         class="rounded bg-neutral-5/50 active:bg-neutral-5 hover:bg-neutral-5 w-20 h-2"
@@ -78,15 +78,15 @@
     </button>
 
     <menu class="space-y-2 p-4">
-      <button
-        class="btn-primary animate-click block w-full"
-        v-for="page in pages"
-        v-bind:key="page.name"
-        @click="navigateTo(page.path)"
-      >
-        <i v-bind:icon="page.icon" />
-        <span v-text="page.name" />
-      </button>
+      <template v-for="page in pages" :key="page.name">
+        <button
+          class="btn-primary animate-click block w-full"
+          @click="navigateTo(page.path)"
+        >
+          <span :icon="page.icon" />
+          <span v-text="page.name" />
+        </button>
+      </template>
     </menu>
   </nav>
 </template>

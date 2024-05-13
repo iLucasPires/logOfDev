@@ -10,41 +10,37 @@
       colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
   });
 
-  const toggleTheme = () => {
-    colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
-    icon.value =
-      colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
-  };
-
   const pages = computed(() => [
     { name: t("nav.home"), path: "/", icon: "i-carbon-home" },
     { name: t("nav.about"), path: "about", icon: "i-carbon-user" },
     { name: t("nav.blog"), path: "blog", icon: "i-carbon-blog" },
   ]);
+
+  function toggleTheme() {
+    colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
+
+    icon.value =
+      colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
+  }
 </script>
 
 <template>
   <header class="mb-10 p-5 w-rel">
     <div class="items-center flex justify-between">
-      <NuxtLinkLocale class="flex gap-2" to="/">
-        <NuxtIsland name="Logo" />
-        <span class="text-lg font-medium hidden md:inline">Lucas Pires</span>
-      </NuxtLinkLocale>
+      <CoreLogo />
 
-      <MMenuNav v-bind:pages="pages" />
-
+      <UiMenuNav :pages="pages" />
       <div class="flex items-center gap-2 relative">
         <button class="p-2" @click="langMenuIsOpen = !langMenuIsOpen">
           <div class="i-carbon-translate" />
-   
           <span class="sr-only">change language</span>
         </button>
         <button class="p-2" @click="toggleTheme">
           <div :class="icon" />
           <span class="sr-only">change theme</span>
         </button>
-        <MMenuMobile v-bind:pages="pages" />
-        <MMenuLang v-show="langMenuIsOpen" @close="langMenuIsOpen = false" />
+        <UiMenuMobile :pages="pages" />
+        <UiMenuLang v-show="langMenuIsOpen" @close="langMenuIsOpen = false" />
       </div>
     </div>
   </header>

@@ -111,7 +111,7 @@
       <h2 class="uppercase" v-text="$t('about.skills.title')" />
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div v-for="item in skillMeList" :key="item.title">
-          <MCardAbout
+          <UiCardAbout
             :title="item.title"
             :icon="item.icon"
             :text="item.text"
