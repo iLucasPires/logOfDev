@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "nuxt-content-assets",
     "@nuxtjs/color-mode",
     "@nuxtjs/robots",
+    "@nuxtjs/sitemap",
   ],
   robots: {
     UserAgent: "*",

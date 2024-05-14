@@ -66,9 +66,9 @@
   >
     <button
       class="w-full h-4 center p-4"
-      @touchstart="buttonDown = true"
-      @touchend="handleTouchEnd"
-      @touchmove="handleTouch"
+      @touchstart.passive="buttonDown = true"
+      @touchend.passive="handleTouchEnd"
+      @touchmove.passive="handleTouch"
       @click="handleClick"
     >
       <span
