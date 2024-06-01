@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  definePageMeta({
-    title: "pages.projects",
+  const { t } = useI18n();
+
+  useSeoMeta({
+    title: t("projects.title"),
   });
 </script>
 

@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  definePageMeta({
-    title: "blog.title",
+  const { t } = useI18n();
+
+  useSeoMeta({
+    title: t("blog.title"),
   });
 
   interface iProps {
@@ -18,7 +20,6 @@
   const {
     locale: { value: localCode },
   } = useI18n();
-
   const { data: posts } = await useAsyncData("blogPosts", () =>
     queryContent("").where({ lang: localCode, status: "published" }).find()
   );
@@ -61,7 +62,6 @@
             v-for="post in otherPosts"
           >
             <UiCardPostCompact
-              :key="post._dir"
               :title="post.title"
               :cover="post.cover"
               :tags="post.tags"
@@ -76,7 +76,7 @@
 
     <template v-else>
       <div>
-        <h3 class="font-semibold" v-text="$t('blog.notFound.title')" />
+        <h3 v-text="$t('blog.notFound.title')" />
         <p v-text="$t('blog.notFound.description')" />
       </div>
     </template>

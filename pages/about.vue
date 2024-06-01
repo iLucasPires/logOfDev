@@ -1,7 +1,8 @@
 <script setup lang="ts">
   const { t } = useI18n();
-  definePageMeta({
-    title: "about.title",
+
+  useSeoMeta({
+    title: t("about.title"),
   });
 
   const socialNetworks = [
@@ -24,7 +25,7 @@
       text: "Linktree",
       icon: "i-carbon-link",
       link: "https://linktr.ee/lpiresn",
-    }
+    },
   ];
 
   const skillMeList = [
@@ -73,7 +74,7 @@
       <div class="row gap-8">
         <div class="hidden w-1/2 lg:block">
           <NuxtImg
-            src="https://media.licdn.com/dms/image/D4D03AQFisb1NlQRllg/profile-displayphoto-shrink_800_800/0/1715300067160?e=1720656000&v=beta&t=D3GpOXrEiXWewvgaEucADL5bl2stQksaD18QSSY_cBk"
+            src="/img/me.jpg"
             class="rounded size-full m-auto saturate-1 object-cover"
             alt="Lucas Pires"
             width="400"

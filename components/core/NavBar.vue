@@ -6,8 +6,8 @@
   const icon = ref("");
 
   onMounted(() => {
-    icon.value =
-      colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
+    icon.value = colorMode.preference === "dark" ? "i-carbon-moon" : "i-carbon-sun";
+
   });
 
   const pages = computed(() => [
@@ -28,15 +28,16 @@
   <header class="mb-10 p-5 w-rel">
     <div class="items-center flex justify-between">
       <CoreLogo />
-
       <UiMenuNav :pages="pages" />
       <div class="flex items-center gap-2 relative">
-        <button class="p-2" @click="langMenuIsOpen = !langMenuIsOpen">
-          <div class="i-carbon-translate" />
+        <button class="center p-2 gap-2" @click="langMenuIsOpen = !langMenuIsOpen">
+          <div class="i-carbon-globe" />
+          <span v-text="$i18n.locale" class="hidden md:block uppercase text-sm" />
           <span class="sr-only">change language</span>
         </button>
-        <button class="p-2" @click="toggleTheme">
+        <button class="center p-2 gap-2" @click="toggleTheme">
           <div :class="icon" />
+          <span v-text="colorMode.value" class="hidden md:block uppercase text-sm" />
           <span class="sr-only">change theme</span>
         </button>
         <UiMenuMobile :pages="pages" />

@@ -1,24 +1,14 @@
 <script setup>
-  const { t } = useI18n();
-  const route = useRoute();
   const head = useLocaleHead({
     addDirAttribute: true,
     identifierAttribute: "id",
     addSeoAttributes: true,
   });
-
-  const title = computed(() =>
-    route.meta.title 
-      ? t(route.meta.title) 
-      : "log of dev"
-  );
-  
 </script>
 
 <template>
   <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
     <Head>
-      <Title>{{ title }}</Title>
       <template v-for="link in head.link" :key="link.id">
         <Link
           :id="link.id"

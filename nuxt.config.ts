@@ -29,11 +29,6 @@ export default defineNuxtConfig({
     UserAgent: "*",
     Disallow: "",
   },
-  contentAssets: {
-    imageSize: "style",
-    contentExtensions: "mdx? csv ya?ml json",
-    debug: false,
-  },
   i18n: {
     customRoutes: "config",
     baseUrl: "https://www.logofdev.software/",
@@ -89,18 +84,6 @@ export default defineNuxtConfig({
     public: {
       imgProfile: "https://avatars.githubusercontent.com/u/68610729?v=4",
       email: process.env.EMAIL,
-    },
-  },
-
-  content: {
-    sources: {
-      github: {
-        driver: "github",
-        repo: "iLucasPires/logOfDev_Content",
-        branch: "main",
-        dir: "blog",
-        token: process.env.GITHUB_TOKEN,
-      },
     },
   },
 });
