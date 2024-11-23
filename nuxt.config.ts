@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
+    "@nuxthq/studio",
   ],
 
   robots: {
@@ -49,13 +50,13 @@ export default defineNuxtConfig({
     locales: [
       {
         code: "en",
-        iso: "en-US",
+        language: "en-US",
         name: "English",
         file: "en-US.json",
       },
       {
         code: "pt",
-        iso: "pt-BR",
+        language: "pt-BR",
         name: "Português",
         file: "pt-BR.json",
       },
