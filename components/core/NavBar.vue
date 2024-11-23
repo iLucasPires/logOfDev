@@ -25,7 +25,7 @@
 </script>
 
 <template>
-  <header class="mb-10 p-5 w-full">
+  <header class="p-5 w-full">
     <div class="items-center flex justify-between">
       <CoreLogo />
       <UiMenuNav :pages="pages" />

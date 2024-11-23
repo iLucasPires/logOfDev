@@ -70,7 +70,7 @@ const skillMeList = [
     <template #title>{{ $t("about.title") }}</template>
     <template #desc>{{ $t("about.description") }}</template>
 
-    <div class="space-y-5">
+    <div class="space-y-4">
       <div class="row gap-8">
         <div class="hidden w-1/2 lg:block">
           <NuxtImg 
@@ -94,11 +94,16 @@ const skillMeList = [
       </div>
     </div>
 
-    <div class="space-y-5">
+    <div class="space-y-4">
       <h2 class="uppercase" v-text="$t('about.skills.title')" />
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <div v-for="item in skillMeList" :key="item.title">
-          <UiCardAbout :title="item.title" :icon="item.icon" :text="item.text" :skills="item.skills" />
+          <UiCardAbout 
+            :title="item.title" 
+            :icon="item.icon" 
+            :text="item.text" 
+            :skills="item.skills" 
+          />
         </div>
       </div>
     </div>

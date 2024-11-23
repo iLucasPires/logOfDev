@@ -1,7 +1,6 @@
 <script lang="ts" setup>
   defineProps<{
     title: string;
-    cover: string;
     description: string;
     timeToRead: number;
     createdAt: string;

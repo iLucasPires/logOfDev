@@ -36,6 +36,10 @@ export default defineNuxtConfig({
     Disallow: "",
   },
 
+  content: {
+    locales: ["en", "pt"],
+  },
+
   i18n: {
     customRoutes: "config",
     baseUrl: "https://www.logofdev.software/",

@@ -21,7 +21,7 @@
         <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
       </template>
     </Head>
-    <Body class=" w-rel mx-auto">
+    <Body class="w-rel mx-auto">
       <slot />
     </Body>
   </Html>

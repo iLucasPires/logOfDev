@@ -14,10 +14,6 @@ div#__nuxt {
   @apply col items-center relative size-full;
 }
 
-.prose img {
-  @apply rounded-lg w-full;
-}
-
 h1,
 h1 > a {
   @apply " md:text-4xl text-3xl";

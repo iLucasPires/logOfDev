@@ -18,7 +18,7 @@
 <template>
   <NuxtLayout>
     <CoreNavBar />
-    <div class="flex-1">
+    <div class="flex-1 py-10">
       <NuxtPage />
     </div>
     <CoreFooter />

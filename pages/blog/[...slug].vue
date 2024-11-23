@@ -1,24 +1,27 @@
 <script lang="ts" setup>
-  const { data: post } = await useAsyncData("post", () =>
-    queryContent(useRoute().params.slug[0])
-      .where({ lang: useI18n().locale.value, status: "published" })
-      .findOne()
-  );
+const route = useRoute()
+const { locale } = useI18n();
 
-  useSeoMeta({
-    title: post?.value?.title,
-    description: post?.value?.description,
-  });
-  
+
+const { data: post } = await useAsyncData("post", () =>
+  queryContent('/blog')
+    .locale(locale.value)
+    .where({ _path: `/blog/${route.params.slug}` })
+    .findOne()
+);
 </script>
 
 <template>
-  <NuxtLayout name="section" class="" layout="article">
+  <NuxtLayout name="section">
+    <template #title>{{ post?.title }}</template>
+
     <ContentRenderer :content="post">
-      <template v-if="post">
-        <h1 v-text="post?.title" class="my-8" />
-        <ContentRendererMarkdown class="space-y-4 lg:(w-4/6)" :value="post" />
-      </template>
+      <div class="prose max-w-4xl text-justify [&_a]:(no-underline) [&_ul]:space-y-4 ">
+
+        <template v-if="post">
+          <ContentRendererMarkdown class="space-y-4 " :value="post" />
+        </template>
+      </div>
     </ContentRenderer>
   </NuxtLayout>
 </template>
