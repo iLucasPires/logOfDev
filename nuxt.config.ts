@@ -1,20 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
     },
   },
+
   css: [
     "@unocss/reset/tailwind.css",
     "~/assets/css/rainbow.css",
     "~/assets/css/main.css",
   ],
+
   features: {
     inlineStyles: false,
   },
+
   modules: [
     "@unocss/nuxt",
     "@nuxt/image",
@@ -25,10 +29,12 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "@nuxtjs/sitemap",
   ],
+
   robots: {
     UserAgent: "*",
     Disallow: "",
   },
+
   i18n: {
     customRoutes: "config",
     baseUrl: "https://www.logofdev.software/",
@@ -70,6 +76,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   colorMode: {
     preference: "dark",
     fallback: "dark",
@@ -80,10 +87,13 @@ export default defineNuxtConfig({
     classSuffix: "",
     storageKey: "nuxt-color-mode",
   },
+
   runtimeConfig: {
     public: {
       imgProfile: "https://avatars.githubusercontent.com/u/68610729?v=4",
       email: process.env.EMAIL,
     },
   },
+
+  compatibilityDate: "2024-11-23",
 });

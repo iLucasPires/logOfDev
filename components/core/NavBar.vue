@@ -12,8 +12,8 @@
 
   const pages = computed(() => [
     { name: t("nav.home"), path: "/", icon: "i-carbon-home" },
-    { name: t("nav.about"), path: "about", icon: "i-carbon-user" },
-    { name: t("nav.blog"), path: "blog", icon: "i-carbon-blog" },
+    { name: t("nav.about"), path: "/about", icon: "i-carbon-user" },
+    { name: t("nav.blog"), path: "/blog", icon: "i-carbon-blog" },
   ]);
 
   function toggleTheme() {
@@ -25,7 +25,7 @@
 </script>
 
 <template>
-  <header class="mb-10 p-5 w-rel">
+  <header class="mb-10 p-5 w-full">
     <div class="items-center flex justify-between">
       <CoreLogo />
       <UiMenuNav :pages="pages" />

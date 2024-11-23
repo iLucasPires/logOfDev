@@ -42,6 +42,5 @@
         </g>
       </g>
     </svg>
-    <span class="text-lg font-medium hidden md:inline">Log of dev</span>
   </NuxtLinkLocale>
 </template>

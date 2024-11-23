@@ -17,15 +17,18 @@
     lastUpdate: string;
   }
 
-  const {
-    locale: { value: localCode },
-  } = useI18n();
-  const { data: posts } = await useAsyncData("blogPosts", () =>
-    queryContent("").where({ lang: localCode, status: "published" }).find()
+  const { locale: { value: localCode } } = useI18n();
+
+  const { data } = await useAsyncData("blogPosts", () =>
+    queryContent(localCode)
+      .where({ status: "published" })
+      .find()
   );
 
-  const lastPosts = posts.value?.slice(0, 2) as iProps[] | [];
-  const otherPosts = posts.value?.slice(2) as iProps[] | [];
+  const lastPosts = data.value?.slice(0, 2) as iProps[] | [];
+  const otherPosts = data.value?.slice(2) as iProps[] | [];
+
+  console.log(data.value);
 </script>
 
 <template>
@@ -33,7 +36,7 @@
     <template #title>Log of dev (blog)</template>
     <template #desc>{{ $t("blog.description") }}</template>
 
-    <template v-if="posts?.length != 0">
+    <template v-if="data?.length != 0">
       <div class="space-y-4">
         <h2 class="uppercase" v-text="$t('blog.latestPosts')" />
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -53,7 +56,7 @@
           </NuxtLinkLocale>
         </div>
       </div>
-      <div v-if="posts?.length && posts?.length > 2" class="space-y-4">
+      <div v-if="data?.length && data?.length > 2" class="space-y-4">
         <h2 class="uppercase" v-text="$t('blog.otherPosts')" />
         <div class="flex flex-col">
           <NuxtLinkLocale

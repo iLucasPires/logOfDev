@@ -11,6 +11,7 @@
 <template>
   <nav class="hidden md:block">
     <menu class="row gap-2">
+
       <li v-for="page in pages">
         <NuxtLinkLocale
           class="row gap-2 items-center py-1 px-4"
