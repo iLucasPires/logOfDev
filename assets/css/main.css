@@ -11,7 +11,7 @@ body {
 }
 
 div#__nuxt {
-  @apply col items-center relative size-full;
+  @apply col relative size-full px-5;
 }
 
 h1,

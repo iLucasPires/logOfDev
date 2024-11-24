@@ -1,5 +1,5 @@
 <template>
-  <component :is="$attrs.layout || 'section'" class="px-5 space-y-8 w-rel">
+  <component :is="$attrs.layout || 'section'" class="space-y-8">
     <div class="space-y-2">
       <h1 class="text-rainbow uppercase font-black" v-if="$slots.title">
         <slot name="title" />

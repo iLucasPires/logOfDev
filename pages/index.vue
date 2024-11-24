@@ -1,21 +1,22 @@
 <script setup lang="ts">
-  const { t } = useI18n();
+const { t } = useI18n();
 
-  useSeoMeta({
-    title: t("home.title"),
-  });
+useSeoMeta({
+  title: t("home.title"),
+  description: t("home.description"),
+});
 
-  const handleContact = () => {
-    const email = useRuntimeConfig().public.email;
-    const msg = `mailto:${email}?subject=Contact&body=${t("home.email_body")}`;
+const handleContact = () => {
+  const email = useRuntimeConfig().public.email;
+  const msg = `mailto:${email}?subject=Contact&body=${t("home.email_body")}`;
 
-    navigator.clipboard.writeText(email);
-    confirm(t("home.email_confirm")) && window.open(msg);
-  };
+  navigator.clipboard.writeText(email);
+  confirm(t("home.email_confirm")) && window.open(msg);
+};
 
-  const handleResume = () => {
-    window.open("/pdf/resume.pdf");
-  };
+const handleResume = () => {
+  window.open("/pdf/resume.pdf");
+};
 </script>
 
 <template>
