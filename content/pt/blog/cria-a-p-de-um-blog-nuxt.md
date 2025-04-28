@@ -4,28 +4,25 @@ Recentemente vi no canal do Eduardo a ideia de criar seu próprio blog e não de
 
 ## Ok, como posso fazer a p\*\*\*\* do meu blog ? (sim, gostei muito dessa expressão)
 
-Vale lembrar que existem várias formas de fazer um blog. Podemos usar ferramentas prontas, diferentes tipos de frameworks, ou até arquiteturas diferentes.  
-Mas, geralmente, é mais simples gerar o conteúdo de forma estática, já que o blog não muda o tempo todo. Assim, podemos usar frameworks que têm esse foco.  
-No nosso caso, vamos usar o **Nuxt** (perfeito para quem programa com Vue) — apesar de o foco principal dele não ser exatamente esse, dentro do ecossistema existem o **Nuxt Content** e o **Nuxt Studio**, que conseguem fazer esse serviço muito bem.
+Vale lembrar que existem várias formas de fazer um blog. Podemos usar ferramentas prontas, diferentes tipos de frameworks, ou até arquiteturas diferentes.:brMas, geralmente, é mais simples gerar o conteúdo de forma estática, já que o blog não muda o tempo todo. Assim, podemos usar frameworks que têm esse foco.:brNo nosso caso, vamos usar o **Nuxt** (perfeito para quem programa com Vue) — apesar de o foco principal dele não ser exatamente esse, dentro do ecossistema existem o **Nuxt Content** e o **Nuxt Studio**, que conseguem fazer esse serviço muito bem.
 
 ---
 
 ## Iniciando o projeto da p\*\*\*\* do blog
 
-Vamos precisar do **Node.js** (ou qualquer runtime de JavaScript que o Nuxt suporte — a maioria funciona) instalado, e também do **Git**.  
-Depois, podemos rodar o seguinte comando, usando seu gerenciador de pacotes favorito — no meu caso, é o **pnpm**:
+Vamos precisar do **Node.js** (ou qualquer runtime de JavaScript que o Nuxt suporte — a maioria funciona) instalado, e também do **Git**.:brDepois, podemos rodar o seguinte comando, usando seu gerenciador de pacotes favorito — no meu caso, é o **pnpm**:
 
 ```bash
 pnpm create nuxt@latest
 ```
 
-Nesse momento, a CLI do Nuxt vai fazer algumas perguntas, como:  
-- nome do projeto,  
-- se você quer inicializar um repositório Git,  
+Nesse momento, a CLI do Nuxt vai fazer algumas perguntas, como:
+
+- nome do projeto,
+- se você quer inicializar um repositório Git,
 - e o mais importante: se você gostaria de instalar alguns módulos.
 
-No nosso caso, **sim**, vamos instalar o **@nuxt/content** e, opcionalmente, o **@nuxt/ui**.  
-Se você acabou passando direto e não instalou, sem estresse — dá para instalar depois, seguindo o tutorial na documentação: [https://content.nuxt.com/](https://content.nuxt.com/).
+No nosso caso, **sim**, vamos instalar o **@nuxt/content** e, opcionalmente, o **@nuxt/ui**.:brSe você acabou passando direto e não instalou, sem estresse — dá para instalar depois, seguindo o tutorial na documentação: <https://content.nuxt.com/>.
 
 ---
 
@@ -33,10 +30,11 @@ Se você acabou passando direto e não instalou, sem estresse — dá para insta
 
 O Nuxt tem uma estrutura de diretórios bem simples. Você pode conferir mais detalhes aqui: [https://nuxt.com/docs/guide/directory-structure](https://nuxt.com/docs/guide/directory-structure/app).
 
-Mas no nosso caso, vamos usar apenas as pastas:  
-- `pages`,  
-- `public`,  
-- `components`,  
+Mas no nosso caso, vamos usar apenas as pastas:
+
+- `pages`,
+- `public`,
+- `components`,
 - `content`.
 
 As outras pastas, como `server` (que já vem criada por padrão), podemos apagar sem problema.
@@ -61,8 +59,7 @@ export default defineContentConfig({
 
 ## Criando as páginas
 
-Dentro da pasta `pages`, vamos criar nossas páginas (Avá, é mesmo ?).  
-Nesse caso, vamos criar dois arquivos: `index.vue` e `[slug].vue`.
+Dentro da pasta `pages`, vamos criar nossas páginas (Avá, é mesmo ?).:brNesse caso, vamos criar dois arquivos: `index.vue` e `[slug].vue`.
 
 **index.vue**:
 
@@ -88,7 +85,7 @@ const { data: posts } = await useAsyncData('blog-posts', () => {
 </template>
 ```
 
-**[slug].vue**:
+[slug&#x5D; **.vue**:
 
 ```vue
 <script lang="ts" setup>
@@ -116,15 +113,13 @@ pnpm install
 pnpm run dev
 ```
 
-E devemos ter tudo funcionando!  
-Claro, vai estar **bastante feio** ainda, porque não adicionamos nenhum CSS, e também não vai ter nenhum post ainda, porque não criamos os arquivos `.md`.
+E devemos ter tudo funcionando!:brClaro, vai estar **bastante feio** ainda, porque não adicionamos nenhum CSS, e também não vai ter nenhum post ainda, porque não criamos os arquivos `.md`.
 
 ---
 
 ## Adicionando Posts na P\*\*\*\* do Blog
 
-Para adicionar posts, podemos criar uma pasta chamada `blog` dentro da `content`.  
-Dentro dessa pasta `blog`, podemos adicionar qualquer arquivo `.md`, por exemplo: `primeiro-post-da-p****-do-blog.md`.
+Para adicionar posts, podemos criar uma pasta chamada `blog` dentro da `content`.:brDentro dessa pasta `blog`, podemos adicionar qualquer arquivo `.md`, por exemplo: `primeiro-post-da-p****-do-blog.md`.
 
 ---
 
@@ -132,9 +127,7 @@ Dentro dessa pasta `blog`, podemos adicionar qualquer arquivo `.md`, por exemplo
 
 Agora é a parte pessoal — melhorar o visual do blog.
 
-Isso vai depender de um certo conhecimento em TailwindCSS ou CSS puro.  
-Para quem ainda não tem nenhum conhecimento, eu vou deixar um template no meu GitHub.  
-Para quem já tem alguma noção, dá pra usar facilmente o plugin Tailwind Typography e aplicar a classe `prose` na `div` do `[slug].vue`.
+Isso vai depender de um certo conhecimento em TailwindCSS ou CSS puro.:brPara quem ainda não tem nenhum conhecimento, eu vou deixar um template no meu GitHub.:brPara quem já tem alguma noção, dá pra usar facilmente o plugin Tailwind Typography e aplicar a classe `prose` na `div` do `[slug].vue`.
 
 ---
 
